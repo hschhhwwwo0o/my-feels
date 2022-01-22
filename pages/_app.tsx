@@ -15,11 +15,11 @@ import store from "../redux";
  */
 import { AnimatePresence } from "framer-motion";
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps, router }: AppProps) {
   return (
     <Provider store={store}>
-      <AnimatePresence>
-        <Component {...pageProps} />
+      <AnimatePresence exitBeforeEnter>
+        <Component {...pageProps} key={router.route} />
       </AnimatePresence>
     </Provider>
   );
