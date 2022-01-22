@@ -1,12 +1,14 @@
-import { configureStore } from "@reduxjs/toolkit";
-import thunk from "redux-thunk";
+import { configureStore, EnhancedStore } from "@reduxjs/toolkit";
 import userReducer from "./user";
 
-const store = configureStore({
+type IStore = EnhancedStore<{
+  user: IUser;
+}>;
+
+const store: IStore = configureStore({
   reducer: {
     user: userReducer,
   },
-  middleware: [thunk],
 });
 
 export type TypedState = ReturnType<typeof store.getState>;

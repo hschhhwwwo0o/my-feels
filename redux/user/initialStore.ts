@@ -1,7 +1,9 @@
-export const initialUserStore = {
+export const initialUserStore: IUser = {
   firstName: "",
   lastName: "",
   email: "",
   password: "",
-  theme: "",
+  theme: "light",
+  createdAt: "",
+  updatedAt: "",
 };
