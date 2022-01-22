@@ -1,0 +1,2 @@
+interface IUser {}
+interface INote {}
