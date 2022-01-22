@@ -11,6 +11,7 @@ your feeling will always be fine, we believe in it.
 
 - **[NodeJS]** - Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine
 - **[TypeScript]** - TypeScript extends JavaScript by adding types to the language
+- **[FeathersClient]** - Client to work with the API
 - **[ReactJS]** - A JavaScript library for building user interfaces
 - **[Redux/React-Redux]** - A Predictable State Container for JS Apps
 - **[Figma]** - Interface development
@@ -22,6 +23,7 @@ The design is all done by me. Icons to take from [Flaticon]
 Design instruments: [Figma]
 
 [nodejs]: https://nodejs.org/en/
+[feathersclient]: https://docs.feathersjs.com/api/client.html#node
 [reactjs]: https://reactjs.org/
 [electronjs]: https://www.electronjs.org/
 [typescript]: https://www.typescriptlang.org/
