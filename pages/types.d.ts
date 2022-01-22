@@ -1,1 +1,2 @@
 interface IHomePageProps {}
+interface IProfilePageProps {}
