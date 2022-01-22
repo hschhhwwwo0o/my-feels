@@ -1,5 +1,7 @@
 import type { AppProps } from "next/app";
 
+import "../styles/index.css";
+
 /**
  * AnimatePresence
  * https://www.framer.com/docs/animate-presence/
