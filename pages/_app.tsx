@@ -9,6 +9,8 @@ import "../styles/index.css";
 import { Provider } from "react-redux";
 import store from "../redux";
 
+import ThePreApplicationLayout from "../layouts/pre-app-layout";
+
 /**
  * AnimatePresence
  * https://www.framer.com/docs/animate-presence/
@@ -18,9 +20,11 @@ import { AnimatePresence } from "framer-motion";
 function MyApp({ Component, pageProps, router }: AppProps) {
   return (
     <Provider store={store}>
-      <AnimatePresence exitBeforeEnter>
-        <Component {...pageProps} key={router.route} />
-      </AnimatePresence>
+      <ThePreApplicationLayout>
+        <AnimatePresence exitBeforeEnter>
+          <Component {...pageProps} key={router.route} />
+        </AnimatePresence>
+      </ThePreApplicationLayout>
     </Provider>
   );
 }
