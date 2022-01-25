@@ -1,8 +1,8 @@
 import type { NextPage } from "next";
-import BrandButton from "../../components/UI/BrandButton";
-import Input from "../../components/UI/Input";
-import Logo from "../../components/UI/Logo";
-import TheLayout from "../../layouts";
+import BrandButton from "components/UI/BrandButton";
+import Input from "components/UI/Input";
+import Logo from "components/UI/Logo";
+import TheLayout from "layouts";
 
 const CreateAnAccount: NextPage = props => {
   return (

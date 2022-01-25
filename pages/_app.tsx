@@ -1,6 +1,6 @@
 import type { AppProps } from "next/app";
 
-import "../styles/index.css";
+import "styles/index.css";
 
 /**
  * Provider
@@ -9,7 +9,7 @@ import "../styles/index.css";
 import { Provider } from "react-redux";
 import store from "../redux";
 
-import ThePreApplicationLayout from "../layouts/pre-app-layout";
+import ThePreApplicationLayout from "layouts/pre-app-layout";
 
 /**
  * AnimatePresence

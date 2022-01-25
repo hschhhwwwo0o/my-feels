@@ -1,11 +1,11 @@
 import type { NextPage } from "next";
-import BrandButton from "../../components/UI/BrandButton";
-import Input from "../../components/UI/Input";
-import MinimalLogo from "../../components/UI/MinimalLogo";
-import MoreButton from "../../components/UI/MoreButton";
-import SecondaryButton from "../../components/UI/SecondaryButton";
-import ThemeSwitch from "../../components/UI/ThemeSwitch";
-import TheLayout from "../../layouts";
+import BrandButton from "components/UI/BrandButton";
+import Input from "components/UI/Input";
+import MinimalLogo from "components/UI/MinimalLogo";
+import MoreButton from "components/UI/MoreButton";
+import SecondaryButton from "components/UI/SecondaryButton";
+import ThemeSwitch from "components/UI/ThemeSwitch";
+import TheLayout from "layouts";
 
 const Profile: NextPage<IProfilePageProps> = props => {
   return (

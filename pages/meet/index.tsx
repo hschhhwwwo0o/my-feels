@@ -1,9 +1,9 @@
 import type { NextPage } from "next";
-import BrandButton from "../../components/UI/BrandButton";
-import Input from "../../components/UI/Input";
-import Logo from "../../components/UI/Logo";
-import ThemeSwitch from "../../components/UI/ThemeSwitch";
-import TheLayout from "../../layouts";
+import BrandButton from "components/UI/BrandButton";
+import Input from "components/UI/Input";
+import Logo from "components/UI/Logo";
+import ThemeSwitch from "components/UI/ThemeSwitch";
+import TheLayout from "layouts";
 
 const Meet: NextPage = props => {
   return (
