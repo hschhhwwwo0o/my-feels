@@ -18,7 +18,9 @@ const Profile: NextPage<IProfilePageProps> = props => {
           <div className="lg:hidden">
             <MinimalLogo />
           </div>
-          <div className="text-base lg:text-lg underline">Personal Account Settings</div>
+          <div className="text-base lg:text-lg underline dark:text-[#E8E8E8] transition-all duration-500">
+            Personal Account Settings
+          </div>
           <div className="opacity-0 lg:hidden">
             <MinimalLogo />
           </div>
@@ -28,8 +30,8 @@ const Profile: NextPage<IProfilePageProps> = props => {
           <Input />
           <Input />
           <Input />
-          <div>
-            <div className="text-sm">Theme</div>
+          <div className="mt-1">
+            <div className="text-sm dark:text-[#E8E8E8] transition-all duration-500">Theme</div>
             <div className="mt-3">
               <ThemeSwitch />
             </div>
