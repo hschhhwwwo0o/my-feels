@@ -16,7 +16,7 @@ const Meet: NextPage = props => {
       </div>
       <div className="mt-9 lg:mt-12 flex flex-col justify-center items-center">
         <h2 className="text-center font-semibold text-lg lg:text-2xl text-[#2F2F2F] dark:text-[#E8E8E8] transition-all duration-700">
-          Lets meet!
+          Let's get acquainted
         </h2>
         <div className="w-full lg:w-96 mt-5 lg:mt-6 flex flex-col gap-4 lg:gap-5">
           <Input />
