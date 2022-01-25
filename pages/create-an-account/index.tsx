@@ -1,7 +1,12 @@
 import type { NextPage } from "next";
+import TheLayout from "../../layouts";
 
 const CreateAnAccount: NextPage = props => {
-  return <></>;
+  return (
+    <TheLayout>
+      <div></div>
+    </TheLayout>
+  );
 };
 
 export default CreateAnAccount;
