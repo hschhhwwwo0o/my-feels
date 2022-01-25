@@ -14,7 +14,15 @@ const Profile: NextPage<IProfilePageProps> = props => {
         <div className="py-12 hidden lg:block">
           <MinimalLogo />
         </div>
-        <div className="text-base lg:text-lg underline pb-9 pt-9 lg:pt-0 lg:pb-12">Personal Account Settings</div>
+        <div className="flex justify-between lg:justify-center w-full pb-9 pt-9 lg:pt-0 lg:pb-12">
+          <div className="lg:hidden">
+            <MinimalLogo />
+          </div>
+          <div className="text-base lg:text-lg underline">Personal Account Settings</div>
+          <div className="opacity-0 lg:hidden">
+            <MinimalLogo />
+          </div>
+        </div>
         <div className="w-full lg:w-96 flex flex-col gap-3">
           <Input />
           <Input />
