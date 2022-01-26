@@ -26,7 +26,7 @@ const Home: NextPage<IHomePageProps> = props => {
         </div>
         <div className="mt-12">
           <div className="text-[#242424] dark:text-[#E8E8E8] text-sm font-medium">All</div>
-          <div className="grid grid-cols-2 gap-4 lg:gap-8 mt-3">
+          <div className="grid grid-cols-2 gap-3 lg:gap-8 mt-3">
             <NoteCard />
             <NoteCard />
             <NoteCard />
