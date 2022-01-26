@@ -1,9 +1,16 @@
 import React, { FunctionComponent } from "react";
 import Link from "next/link";
 
-const NoteCard: FunctionComponent = () => {
+interface INoteCard {
+  title?: string;
+  text?: string;
+  date?: string;
+  id?: string;
+}
+
+const NoteCard: FunctionComponent<INoteCard> = ({ title = "", text = "", date = "", id = "1" }) => {
   return (
-    <Link href="/note/1">
+    <Link href={`note/${id}`}>
       <a>
         <div className="cursor-pointer">
           <div className="border-2 border-[#EAEAEA] dark:border-[#2D2D2D] w-full max-w-[164px] lg:max-w-[272px] h-[164px] lg:h-[272px] rounded-[21px] shadow-md px-4 lg:px-6 py-4 lg:py-5">
