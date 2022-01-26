@@ -52,7 +52,11 @@ const Profile: NextPage<IProfilePageProps> = props => {
                     </a>
                   </Link>
                 </div>
-                <MoreButton />
+                <Link href="/more">
+                  <a>
+                    <MoreButton />
+                  </a>
+                </Link>
               </div>
             </div>
           </div>
