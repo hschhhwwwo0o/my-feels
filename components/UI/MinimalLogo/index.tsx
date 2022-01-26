@@ -3,7 +3,7 @@ import React, { FunctionComponent } from "react";
 const MinimalLogo: FunctionComponent = () => {
   return (
     <>
-      <div>
+      <div className="cursor-pointer">
         <h1 className="text-lg dark:text-white">
           <i>m</i>
           <span className="font-bold">f</span>

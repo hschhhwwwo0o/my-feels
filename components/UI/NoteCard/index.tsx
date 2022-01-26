@@ -3,7 +3,7 @@ import React, { FunctionComponent } from "react";
 const NoteCard: FunctionComponent = () => {
   return (
     <>
-      <div>
+      <div className="cursor-pointer">
         <div className="border-2 border-[#EAEAEA] dark:border-[#2D2D2D] w-full max-w-[164px] lg:max-w-[272px] h-[164px] lg:h-[272px] rounded-[21px] shadow-md px-4 lg:px-6 py-4 lg:py-5">
           <div>
             <h2 className="font-medium text-sm lg:text-lg text-ellipsis overflow-hidden whitespace-nowrap text-[#242424] dark:text-[#D8D8D8]">
