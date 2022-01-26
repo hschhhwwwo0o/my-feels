@@ -18,3 +18,7 @@ body::-webkit-scrollbar {
 body::scrollbar {
   width: 0;
 }
+
+body {
+  background-color: #151515;
+}
