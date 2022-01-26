@@ -11,6 +11,8 @@ interface IUser {
   theme: ITheme;
   createdAt: ITimeStamp;
   updatedAt: ITimeStamp;
+  __v: string | number;
+  _id: string;
 }
 interface INote {
   title: string;

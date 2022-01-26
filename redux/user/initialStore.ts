@@ -6,4 +6,6 @@ export const initialUserStore: IUser = {
   theme: "light",
   createdAt: "",
   updatedAt: "",
+  __v: "",
+  _id: "",
 };
