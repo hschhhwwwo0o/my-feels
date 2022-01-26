@@ -4,7 +4,13 @@ function userReducer(state = initialUserStore, action: any): typeof initialUserS
   switch (action.type) {
     case "SET_USER":
       return {
+        ...state,
         ...action.payload,
+      };
+    case "CHANGE_USER_THEME":
+      return {
+        ...state,
+        theme: action.payload,
       };
     case "LOGOUT_USER":
       return initialUserStore;
