@@ -18,15 +18,18 @@ const Home: NextPage<IHomePageProps> = props => {
         <div className="lg:px-16">
           <input
             type="text"
-            className="text-lg lg:text-2xl bg-transparent outline-none mt-6 text-[#242424] dark:text-[#ECECEC]"
+            className="text-lg lg:text-2xl bg-transparent font-semibold outline-none mt-6 text-[#242424] dark:text-[#ECECEC] placeholder-[#bebebe] dark:placeholder-[#545454]"
             placeholder="Enter Title"
           />
           <textarea
-            className="mt-5 w-full bg-transparent text-[#444444] dark:text-[#B2B2B2] outline-none text-justify h-[1000px]"
+            className="mt-5 w-full bg-transparent font-medium text-[#444444] dark:text-[#B2B2B2] outline-none text-justify h-[1000px] placeholder-[#bebebe] dark:placeholder-[#545454]"
             placeholder="Enter text"
             name=""
             id=""
           ></textarea>
+          <div className="text-[#C5C5C5] dark:text-[#5B5B5B] fixed bottom-5 flex items-center justify-center w-full left-0 text-sm font-semibold">
+            12/02/2022
+          </div>
         </div>
       </div>
     </TheLayout>
