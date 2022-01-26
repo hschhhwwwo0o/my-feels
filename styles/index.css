@@ -10,3 +10,11 @@
 .mulish {
   font-family: "Mulish", sans-serif;
 }
+
+body::-webkit-scrollbar {
+  width: 0 !important;
+}
+
+body::scrollbar {
+  width: 0;
+}
