@@ -12,7 +12,7 @@ interface IUser {
   createdAt: ITimeStamp;
   updatedAt: ITimeStamp;
   __v: string | number;
-  _id: string;
+  _id: IID;
 }
 interface INote {
   title: string;
@@ -22,4 +22,5 @@ interface INote {
   isPinned: boolean;
   createdAt: ITimeStamp;
   updatedAt: ITimeStamp;
+  _id: IID;
 }
