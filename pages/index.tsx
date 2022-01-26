@@ -29,7 +29,6 @@ const Home: NextPage<IHomePageProps> = props => {
           <div className="grid grid-cols-2 gap-3 lg:gap-8 mt-3">
             <NoteCard />
             <NoteCard />
-            <NoteCard />
           </div>
         </div>
         <div className="fixed w-full left-0 px-5 bottom-5 lg:hidden">
