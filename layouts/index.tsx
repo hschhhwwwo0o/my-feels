@@ -3,7 +3,7 @@ import React, { FunctionComponent, ReactNode } from "react";
 const TheLayout: FunctionComponent<{ children: ReactNode }> = ({ children }) => {
   return (
     <main className="flex items-center justify-center px-5 lg:px-0">
-      <div className="w-full h-16 max-w-xl">{children}</div>
+      <div className="w-full max-w-xl">{children}</div>
     </main>
   );
 };

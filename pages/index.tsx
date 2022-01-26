@@ -2,11 +2,13 @@ import type { NextPage } from "next";
 import TheLayout from "layouts";
 import MinimalLogo from "components/UI/MinimalLogo";
 import NoteCard from "components/UI/NoteCard";
+import BrandButton from "components/UI/BrandButton";
+import AddCircleButton from "components/UI/AddCircleButton";
 
 const Home: NextPage<IHomePageProps> = props => {
   return (
     <TheLayout>
-      <div>
+      <div className="h-full">
         <div className="flex items-center justify-center py-12">
           <MinimalLogo />
         </div>
@@ -22,6 +24,19 @@ const Home: NextPage<IHomePageProps> = props => {
           <div className="grid grid-cols-2 gap-4 lg:gap-8 mt-3">
             <NoteCard />
             <NoteCard />
+            <NoteCard />
+          </div>
+        </div>
+        <div className="fixed w-full left-0 px-5 bottom-5 lg:hidden">
+          <div className="shadow-2xl">
+            <BrandButton>Add Note</BrandButton>
+          </div>
+        </div>
+        <div className="flex flex-row justify-end h-28">
+          <div className="relative left-10">
+            <div className="hidden lg:block fixed bottom-5">
+              <AddCircleButton />
+            </div>
           </div>
         </div>
       </div>
