@@ -6,6 +6,7 @@ import MoreButton from "components/UI/MoreButton";
 import SecondaryButton from "components/UI/SecondaryButton";
 import ThemeSwitch from "components/UI/ThemeSwitch";
 import TheLayout from "layouts";
+import Link from "next/link";
 
 const Profile: NextPage<IProfilePageProps> = props => {
   return (
@@ -45,7 +46,11 @@ const Profile: NextPage<IProfilePageProps> = props => {
               </div>
               <div className="flex flex-row gap-3">
                 <div className="w-full">
-                  <SecondaryButton>Cancel</SecondaryButton>
+                  <Link href="/">
+                    <a>
+                      <SecondaryButton>Cancel</SecondaryButton>
+                    </a>
+                  </Link>
                 </div>
                 <MoreButton />
               </div>

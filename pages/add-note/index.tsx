@@ -3,6 +3,7 @@ import TheLayout from "layouts";
 import MinimalLogo from "components/UI/MinimalLogo";
 import SecondaryButton from "components/UI/SecondaryButton";
 import BrandButton from "components/UI/BrandButton";
+import Link from "next/link";
 
 const Home: NextPage<IHomePageProps> = props => {
   return (
@@ -19,7 +20,11 @@ const Home: NextPage<IHomePageProps> = props => {
             placeholder="Enter title..."
           />
           <div className="mt-14 grid grid-cols-1 lg:grid-cols-2 gap-2 lg:gap-6 fixed w-full pr-10 lg:pr-10 lg:relative bottom-5">
-            <SecondaryButton>Back</SecondaryButton>
+            <Link href="/">
+              <a>
+                <SecondaryButton>Back</SecondaryButton>
+              </a>
+            </Link>
             <BrandButton>Add note</BrandButton>
           </div>
         </div>

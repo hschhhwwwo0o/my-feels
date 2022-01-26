@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import Link from "next/link";
 import TheLayout from "layouts";
 import MinimalLogo from "components/UI/MinimalLogo";
 import BackButton from "components/UI/BackButton";
@@ -11,7 +12,11 @@ const Home: NextPage<IHomePageProps> = props => {
       <div className="h-full">
         <div className="h-16 shadow-sm dark:shadow-md w-full min-w-[100vw] -ml-5 lg:-ml-0 lg:min-w-[613px] flex flex-row justify-between items-center px-5 lg:px-[120px]">
           <MinimalLogo />
-          <BackButton />
+          <Link href="/">
+            <a>
+              <BackButton />
+            </a>
+          </Link>
           <Emojies />
           <Thumbtack />
         </div>
