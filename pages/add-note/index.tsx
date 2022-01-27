@@ -25,7 +25,7 @@ const CreateNote: NextPage<IHomePageProps> = props => {
 
   return (
     <TheLayout>
-      <div className="h-full">
+      <div className="h-full min-h-screen flex flex-col justify-between lg:block pb-5">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -35,7 +35,7 @@ const CreateNote: NextPage<IHomePageProps> = props => {
         >
           <MinimalLogo />
         </motion.div>
-        <div className="mt-36">
+        <div className="-mt-36 lg:mt-36">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -61,7 +61,7 @@ const CreateNote: NextPage<IHomePageProps> = props => {
               placeholder="Enter title..."
             />
           </motion.div>
-          <div className="mt-14 grid grid-cols-1 lg:grid-cols-2 gap-2 lg:gap-6 fixed w-full pr-10 lg:pr-10 lg:relative bottom-5">
+          <div className="mt-20 grid-cols-1 lg:grid-cols-2 gap-2 lg:gap-6 w-full lg:relative -top-5 hidden lg:grid">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -83,6 +83,28 @@ const CreateNote: NextPage<IHomePageProps> = props => {
               <BrandButton onClickHandler={add}>Add note</BrandButton>
             </motion.div>
           </div>
+        </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 lg:gap-6 w-full lg:relative lg:hidden">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.7, delay: 0.6 }}
+          >
+            <Link href="/">
+              <a>
+                <SecondaryButton>Back</SecondaryButton>
+              </a>
+            </Link>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.7, delay: 0.8 }}
+          >
+            <BrandButton onClickHandler={add}>Add note</BrandButton>
+          </motion.div>
         </div>
       </div>
     </TheLayout>
