@@ -6,12 +6,20 @@ interface IEmojies {
 }
 
 const Emojies: FunctionComponent<IEmojies> = ({ value = [], setValue = () => {} }) => {
+  function onClickHandler(type: string) {
+    if (value.includes(type)) {
+      setValue([...value.filter(v => v != type)]);
+    } else {
+      setValue([...value, type]);
+    }
+  }
+
   return (
     <>
       <div className="flex flex-row gap-3 items-center">
         <img
           onClick={() => {
-            setValue([...value, "cry"]);
+            onClickHandler("cry");
           }}
           src="/emoji/cry.png"
           alt=""
@@ -21,7 +29,7 @@ const Emojies: FunctionComponent<IEmojies> = ({ value = [], setValue = () => {} 
         />
         <img
           onClick={() => {
-            setValue([...value, "love"]);
+            onClickHandler("love");
           }}
           src="/emoji/love.png"
           alt=""
@@ -31,7 +39,7 @@ const Emojies: FunctionComponent<IEmojies> = ({ value = [], setValue = () => {} 
         />
         <img
           onClick={() => {
-            setValue([...value, "smile"]);
+            onClickHandler("smile");
           }}
           src="/emoji/smile.png"
           alt=""
@@ -41,7 +49,7 @@ const Emojies: FunctionComponent<IEmojies> = ({ value = [], setValue = () => {} 
         />
         <img
           onClick={() => {
-            setValue([...value, "sparkles"]);
+            onClickHandler("sparkles");
           }}
           src="/emoji/sparkles.png"
           alt=""
