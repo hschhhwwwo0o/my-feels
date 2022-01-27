@@ -70,7 +70,7 @@ const More: NextPage<IProfilePageProps> = props => {
                 <BrandButton onClickHandler={remove}>Remove account</BrandButton>
               </div>
             </motion.div>
-            <div className="mt-5 grid grid-cols-2 gap-4">
+            <div className="mt-5 grid grid-cols-2 gap-4 pb-40">
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}

@@ -50,6 +50,7 @@ export function addNote(title: string, authorID: string, router: NextRouter) {
       const response = await feathersClient.service("notes").create({
         title,
         authorID,
+        text: "",
       });
       dispatch({
         type: "ADD_NOTE",
