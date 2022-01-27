@@ -86,3 +86,22 @@ export function saveNote(title: string, text: string, isPinned: boolean) {
     }
   };
 }
+
+export function pinNote(isPinned: boolean) {
+  return async function (dispatch: TypedDispatch, getState: () => any) {
+    try {
+      const response: any = await feathersClient.service("notes").patch(getState().notes.currentNote._id, {
+        isPinned,
+      });
+      dispatch({
+        type: "PIN_NOTE",
+        payload: {
+          note: response,
+          _id: response._id,
+        },
+      });
+    } catch (error) {
+      console.error(error);
+    }
+  };
+}

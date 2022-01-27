@@ -9,7 +9,7 @@ import { IStore, TypedDispatch } from "redux";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { NextRouter, useRouter } from "next/router";
-import { saveNote } from "redux/notes/asyncActions";
+import { pinNote, saveNote } from "redux/notes/asyncActions";
 
 const Home: NextPage<IHomePageProps> = props => {
   const { notes }: IStore = useSelector((store: IStore) => store);
@@ -39,6 +39,11 @@ const Home: NextPage<IHomePageProps> = props => {
     dispatch(saveNote(title, text, isPinned));
   }
 
+  async function onPin() {
+    dispatch(pinNote(!isPinned));
+    setIsPinned(!isPinned);
+  }
+
   return (
     <TheLayout>
       <div className="h-full">
@@ -54,12 +59,7 @@ const Home: NextPage<IHomePageProps> = props => {
             </Link>
           </div>
           <Emojies />
-          <Thumbtack
-            value={isPinned}
-            onClickHandler={() => {
-              setIsPinned(!isPinned);
-            }}
-          />
+          <Thumbtack value={isPinned} onClickHandler={onPin} />
         </div>
         <div className="lg:px-16">
           <input

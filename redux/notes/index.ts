@@ -22,11 +22,19 @@ function notesReducer(state = initialNotesStore, action: any): INotesStore {
         pinnedNotes: state.pinnedNotes,
       };
     case "PIN_NOTE":
-      return {
-        ...state,
-        notes: state.notes.filter((note: INote) => note._id !== action.payload._id),
-        pinnedNotes: [action.payload.note, ...state.pinnedNotes],
-      };
+      if (action.payload.note.isPinned) {
+        return {
+          ...state,
+          notes: state.notes.filter((note: INote) => note._id !== action.payload._id),
+          pinnedNotes: [action.payload.note, ...state.pinnedNotes],
+        };
+      } else {
+        return {
+          ...state,
+          notes: [action.payload.note, ...state.notes],
+          pinnedNotes: state.pinnedNotes.filter((note: INote) => note._id !== action.payload._id),
+        };
+      }
     case "SAVE_NOTE":
       if (action.payload.note.isPinned) {
         return {
