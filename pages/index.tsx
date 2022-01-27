@@ -48,7 +48,7 @@ const Home: NextPage<IHomePageProps> = props => {
         ) : (
           ""
         )}
-        <div className="text-center">
+        <div className="text-center dark:text-[#E8E8E8]">
           {notes.notes.length === 0 && notes.pinnedNotes.length === 0 ? "You don't have notes yet" : ""}
         </div>
         <div className="fixed w-full left-0 px-5 bottom-5 lg:hidden">
