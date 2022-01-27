@@ -1,7 +1,16 @@
 import React, { FunctionComponent } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { IStore } from "redux";
+import { TypedDispatch } from "redux";
+import { changeTheme } from "redux/user/asyncActions";
 
 const ThemeSwitch: FunctionComponent = () => {
-  async function onClickHandler() {}
+  const { user }: IStore = useSelector((store: IStore) => store);
+  const dispatch: TypedDispatch = useDispatch();
+
+  async function onClickHandler() {
+    dispatch(changeTheme(user.theme === "dark" ? "light" : "dark"));
+  }
 
   return (
     <>

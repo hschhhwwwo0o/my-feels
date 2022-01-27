@@ -22,7 +22,7 @@ const ThePreApplicationLayout: FunctionComponent<{ children: ReactNode }> = ({ c
   }, [user]);
 
   return (
-    <div className="">
+    <div className={user.theme}>
       <div className="bg-[#FAFAFA] min-h-screen dark:bg-[#151515] transition-all duration-1000">
         <div>{children}</div>
       </div>
