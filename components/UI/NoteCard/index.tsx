@@ -1,4 +1,5 @@
 import React, { FunctionComponent } from "react";
+import moment from "moment";
 import { Link as Anchor } from "react-scroll";
 import { NextRouter, useRouter } from "next/router";
 
@@ -34,7 +35,7 @@ const NoteCard: FunctionComponent<INoteCard> = ({ title = "", text = "", date = 
           </div>
           <div>
             <div className="text-[10px] lg:text-xs text-[#C5C5C5] dark:text-[#A5A5A5] font-semibold mt-3 lg:mt-6 transition-all duration-1000">
-              {date}
+              {moment(date).format("DD/MM/YYYY")}
             </div>
           </div>
         </div>

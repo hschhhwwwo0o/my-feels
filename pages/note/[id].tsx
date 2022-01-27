@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { NextRouter, useRouter } from "next/router";
 import { pinNote, saveNote } from "redux/notes/asyncActions";
 import { motion } from "framer-motion";
+import moment from "moment";
 import Link from "next/link";
 import TheLayout from "layouts";
 import MinimalLogo from "components/UI/MinimalLogo";
@@ -20,6 +21,7 @@ const Home: NextPage<IHomePageProps> = props => {
   const [title, setTitle] = useState<string>("");
   const [text, setText] = useState<string>("");
   const [isPinned, setIsPinned] = useState<boolean>(false);
+  const [updatedAt, setUpdatedAt] = useState<string>("");
   const [emojies, setEmojies] = useState<string[]>([]);
 
   useEffect(() => {
@@ -35,6 +37,7 @@ const Home: NextPage<IHomePageProps> = props => {
     setTitle(notes.currentNote.title);
     setText(notes.currentNote.text);
     setIsPinned(notes.currentNote.isPinned);
+    setUpdatedAt(notes.currentNote.updatedAt);
     setEmojies(notes.currentNote.emojies);
   }, [notes.currentNote]);
 
@@ -129,7 +132,7 @@ const Home: NextPage<IHomePageProps> = props => {
             transition={{ duration: 0.7, delay: 0.5 }}
             className="text-[#C5C5C5] dark:text-[#5B5B5B] fixed bottom-5 flex items-center justify-center w-full left-0 text-sm font-semibold"
           >
-            12/02/2022
+            {moment(updatedAt).format("DD/MM/YYYY")}
           </motion.div>
         </div>
       </div>

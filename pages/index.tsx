@@ -49,7 +49,7 @@ const Home: NextPage<IHomePageProps> = props => {
             <div className="text-[#242424] dark:text-[#E8E8E8] text-sm font-medium">Pinned</div>
             <div className="grid grid-cols-2 gap-4 lg:gap-8 mt-3">
               {notes.pinnedNotes.map((note: INote, index) => {
-                return <NoteCard title={note.title} text={note.text} id={note._id} key={index} />;
+                return <NoteCard title={note.title} text={note.text} id={note._id} date={note.updatedAt} key={index} />;
               })}
             </div>
           </motion.div>
@@ -67,7 +67,7 @@ const Home: NextPage<IHomePageProps> = props => {
             <div className="text-[#242424] dark:text-[#E8E8E8] text-sm font-medium">All</div>
             <div className="grid grid-cols-2 gap-3 lg:gap-8 mt-3">
               {notes.notes.map((note: INote, index) => {
-                return <NoteCard title={note.title} text={note.text} id={note._id} key={index} />;
+                return <NoteCard title={note.title} text={note.text} id={note._id} date={note.updatedAt} key={index} />;
               })}
             </div>
           </motion.div>
