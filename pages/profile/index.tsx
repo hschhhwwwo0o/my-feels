@@ -3,6 +3,7 @@ import { NextRouter, useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { IStore, TypedDispatch } from "redux";
 import { useDispatch, useSelector } from "react-redux";
+import { motion } from "framer-motion";
 import TheLayout from "layouts";
 import Link from "next/link";
 import BrandButton from "components/UI/BrandButton";
@@ -37,10 +38,22 @@ const Profile: NextPage<IProfilePageProps> = props => {
   return (
     <TheLayout>
       <div className="flex flex-col items-center">
-        <div className="py-12 hidden lg:block">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.7 }}
+          className="py-12 hidden lg:block"
+        >
           <MinimalLogo />
-        </div>
-        <div className="flex justify-between lg:justify-center w-full pb-9 pt-9 lg:pt-0 lg:pb-12">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.7 }}
+          className="flex justify-between lg:justify-center w-full pb-9 pt-9 lg:pt-0 lg:pb-12"
+        >
           <div className="lg:hidden">
             <MinimalLogo />
           </div>
@@ -50,26 +63,71 @@ const Profile: NextPage<IProfilePageProps> = props => {
           <div className="opacity-0 lg:hidden">
             <MinimalLogo />
           </div>
-        </div>
+        </motion.div>
         <div className="w-full lg:w-96 flex flex-col gap-3">
-          <Input value={name} setValue={setName} placeholder="Enter your name..." />
-          <Input value={lastName} setValue={setLastName} placeholder="Enter your last name..." />
-          <Input value={email} setValue={setEmail} placeholder="Enter your email..." />
-          <Input value={password} setValue={setPassword} placeholder="Enter your new password..." />
-          <div className="mt-1">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.7, delay: 0.1 }}
+          >
+            <Input value={name} setValue={setName} placeholder="Enter your name..." />
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+          >
+            <Input value={lastName} setValue={setLastName} placeholder="Enter your last name..." />
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.7, delay: 0.3 }}
+          >
+            <Input value={email} setValue={setEmail} placeholder="Enter your email..." />
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.7, delay: 0.4 }}
+          >
+            <Input value={password} setValue={setPassword} placeholder="Enter your new password..." />
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.7, delay: 0.5 }}
+            className="mt-1"
+          >
             <div className="text-sm dark:text-[#E8E8E8] transition-all duration-500">Theme</div>
             <div className="mt-3">
               <ThemeSwitch />
             </div>
-          </div>
+          </motion.div>
           <div className="w-full left-0 px-6 lg:px-0 fixed bottom-5 lg:w-full lg:relative lg:bottom-0">
             <div className="flex flex-col gap-3">
               <div className="mt-9">
-                <div>
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.7, delay: 0.7 }}
+                >
                   <BrandButton onClickHandler={onSave}>Save</BrandButton>
-                </div>
+                </motion.div>
               </div>
-              <div className="flex flex-row gap-3">
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.7, delay: 0.9 }}
+                className="flex flex-row gap-3"
+              >
                 <div className="w-full">
                   <Link href="/">
                     <a>
@@ -82,7 +140,7 @@ const Profile: NextPage<IProfilePageProps> = props => {
                     <MoreButton />
                   </a>
                 </Link>
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>

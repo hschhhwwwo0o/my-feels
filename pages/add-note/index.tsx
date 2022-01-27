@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import { TypedDispatch } from "redux";
 import { useDispatch, useSelector } from "react-redux";
+import { motion } from "framer-motion";
 import TheLayout from "layouts";
 import MinimalLogo from "components/UI/MinimalLogo";
 import SecondaryButton from "components/UI/SecondaryButton";
@@ -25,27 +26,62 @@ const CreateNote: NextPage<IHomePageProps> = props => {
   return (
     <TheLayout>
       <div className="h-full">
-        <div className="flex items-center justify-center py-12">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.7 }}
+          className="flex items-center justify-center py-12"
+        >
           <MinimalLogo />
-        </div>
+        </motion.div>
         <div className="mt-36">
-          <div className="font-semibold text-base text-[#3b3b3b] dark:text-[#565656]">Add title:</div>
-          <input
-            value={title}
-            onChange={e => {
-              setTitle(e.target.value);
-            }}
-            className="font-semibold w-full text-3xl lg:text-5xl outline-none border-none bg-transparent mt-4 placeholder-[#303030] dark:placeholder-[#959595] dark:text-[#e7e7e7]"
-            type="text"
-            placeholder="Enter title..."
-          />
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="font-semibold text-base text-[#3b3b3b] dark:text-[#565656]"
+          >
+            Add title:
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.7, delay: 0.4 }}
+          >
+            <input
+              value={title}
+              onChange={e => {
+                setTitle(e.target.value);
+              }}
+              className="font-semibold w-full text-3xl lg:text-5xl outline-none border-none bg-transparent mt-4 placeholder-[#303030] dark:placeholder-[#959595] dark:text-[#e7e7e7]"
+              type="text"
+              placeholder="Enter title..."
+            />
+          </motion.div>
           <div className="mt-14 grid grid-cols-1 lg:grid-cols-2 gap-2 lg:gap-6 fixed w-full pr-10 lg:pr-10 lg:relative bottom-5">
-            <Link href="/">
-              <a>
-                <SecondaryButton>Back</SecondaryButton>
-              </a>
-            </Link>
-            <BrandButton onClickHandler={add}>Add note</BrandButton>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.7, delay: 0.6 }}
+            >
+              <Link href="/">
+                <a>
+                  <SecondaryButton>Back</SecondaryButton>
+                </a>
+              </Link>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.7, delay: 0.8 }}
+            >
+              <BrandButton onClickHandler={add}>Add note</BrandButton>
+            </motion.div>
           </div>
         </div>
       </div>

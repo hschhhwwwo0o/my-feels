@@ -38,14 +38,7 @@ function notesReducer(state = initialNotesStore, action: any): INotesStore {
     case "SAVE_NOTE":
       if (action.payload.note.isPinned) {
         return {
-          currentNote: {
-            ...state.currentNote,
-            title: "",
-            text: "",
-            createdAt: "",
-            updatedAt: "",
-            _id: "",
-          },
+          ...state,
           notes: state.notes,
           pinnedNotes: [
             action.payload.note,
@@ -54,14 +47,7 @@ function notesReducer(state = initialNotesStore, action: any): INotesStore {
         };
       } else {
         return {
-          currentNote: {
-            ...state.currentNote,
-            title: "",
-            text: "",
-            createdAt: "",
-            updatedAt: "",
-            _id: "",
-          },
+          ...state,
           notes: [action.payload.note, ...state.notes.filter((note: INote) => note._id !== action.payload.note._id)],
           pinnedNotes: state.pinnedNotes,
         };
