@@ -1,5 +1,9 @@
 import type { NextPage } from "next";
+import { NextRouter, useRouter } from "next/router";
 import { useState } from "react";
+import { TypedDispatch } from "redux";
+import { useDispatch } from "react-redux";
+import { meetUser } from "redux/user/asyncActions";
 import TheLayout from "layouts";
 import BrandButton from "components/UI/BrandButton";
 import Input from "components/UI/Input";
@@ -7,8 +11,16 @@ import Logo from "components/UI/Logo";
 import ThemeSwitch from "components/UI/ThemeSwitch";
 
 const Meet: NextPage = props => {
+  const dispatch: TypedDispatch = useDispatch();
+  const router: NextRouter = useRouter();
+
   const [name, setName] = useState<string>("");
   const [lastName, setLastName] = useState<string>("");
+
+  async function meet() {
+    dispatch(meetUser(name, lastName));
+    router.push("/");
+  }
 
   return (
     <TheLayout>
@@ -31,7 +43,7 @@ const Meet: NextPage = props => {
               <ThemeSwitch />
             </div>
           </div>
-          <BrandButton>Continue</BrandButton>
+          <BrandButton onClickHandler={meet}>Continue</BrandButton>
         </div>
       </div>
     </TheLayout>
