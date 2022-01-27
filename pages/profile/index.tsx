@@ -27,10 +27,10 @@ const Profile: NextPage<IProfilePageProps> = props => {
           </div>
         </div>
         <div className="w-full lg:w-96 flex flex-col gap-3">
-          <Input />
-          <Input />
-          <Input />
-          <Input />
+          <Input placeholder="Enter your name..." />
+          <Input placeholder="Enter your last name..." />
+          <Input placeholder="Enter your email..." />
+          <Input placeholder="Enter your new password..." />
           <div className="mt-1">
             <div className="text-sm dark:text-[#E8E8E8] transition-all duration-500">Theme</div>
             <div className="mt-3">

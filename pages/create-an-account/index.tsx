@@ -25,9 +25,9 @@ const CreateAnAccount: NextPage = props => {
           Create an account
         </h2>
         <div className="w-full lg:w-96 mt-5 lg:mt-6 flex flex-col gap-4 lg:gap-5">
-          <Input />
-          <Input />
-          <Input />
+          <Input placeholder="Enter email..." />
+          <Input placeholder="Enter password..." />
+          <Input placeholder="Repeat password..." />
           <BrandButton>Create</BrandButton>
         </div>
       </div>

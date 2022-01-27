@@ -19,8 +19,8 @@ const Meet: NextPage = props => {
           Let's get acquainted
         </h2>
         <div className="w-full lg:w-96 mt-5 lg:mt-6 flex flex-col gap-4 lg:gap-5">
-          <Input />
-          <Input />
+          <Input placeholder="Enter your name..." />
+          <Input placeholder="Enter your last name" />
           <div className="mt-1">
             <div className="text-sm dark:text-[#E8E8E8] transition-all duration-500">Theme</div>
             <div className="mt-3">
