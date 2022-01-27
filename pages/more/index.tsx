@@ -1,4 +1,6 @@
 import type { NextPage } from "next";
+import { IStore } from "redux";
+import { useSelector } from "react-redux";
 import TheLayout from "layouts";
 import MinimalLogo from "components/UI/MinimalLogo";
 import SecondaryButton from "components/UI/SecondaryButton";
@@ -6,6 +8,8 @@ import BrandButton from "components/UI/BrandButton";
 import Link from "next/link";
 
 const More: NextPage<IProfilePageProps> = props => {
+  const { user }: IStore = useSelector((store: IStore) => store);
+
   return (
     <TheLayout>
       <div className="flex flex-col items-center">
@@ -16,7 +20,9 @@ const More: NextPage<IProfilePageProps> = props => {
         <div className="mt-12 w-full">
           <div className="w-full">
             <div className="border-2 border-[#EAEAEA] dark:border-[#2D2D2D] w-full rounded-3xl px-5 pt-6 pb-4 lg:pb-6 shadow-md">
-              <div className="font-semibold text-lg text-[#242424] dark:text-[#ECECEC]">Dear Saveliy Meetrofanov</div>
+              <div className="font-semibold text-lg text-[#242424] dark:text-[#ECECEC]">
+                Dear {user.firstName} {user.lastName}
+              </div>
               <div className="text-[#444444] dark:text-[#B2B2B2] mt-[14px] text-sm lg:text-base">
                 “Archive is the publishing house behind the most inspiring books all around Europe.
                 <br />
