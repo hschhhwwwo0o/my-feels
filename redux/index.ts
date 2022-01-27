@@ -1,5 +1,6 @@
 import { configureStore, EnhancedStore } from "@reduxjs/toolkit";
 import userReducer from "./user";
+import notesReducer from "./notes";
 
 type IStore = EnhancedStore<{
   user: IUser;
@@ -8,10 +9,10 @@ type IStore = EnhancedStore<{
 const store: IStore = configureStore({
   reducer: {
     user: userReducer,
+    notes: notesReducer,
   },
 });
 
-export type TypedState = ReturnType<typeof store.getState>;
 export type TypedDispatch = typeof store.dispatch;
 
 export default store;
