@@ -64,13 +64,14 @@ export function addNote(title: string, authorID: string, router: NextRouter) {
   };
 }
 
-export function saveNote(title: string, text: string, isPinned: boolean) {
+export function saveNote(title: string, text: string, isPinned: boolean, emojies: string[]) {
   return async function (dispatch: TypedDispatch, getState: () => any) {
     try {
       const response = await feathersClient.service("notes").patch(getState().notes.currentNote._id, {
         title,
         text,
         isPinned,
+        emojies,
       });
       dispatch({
         type: "SAVE_NOTE",

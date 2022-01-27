@@ -19,6 +19,7 @@ const Home: NextPage<IHomePageProps> = props => {
   const [title, setTitle] = useState<string>("");
   const [text, setText] = useState<string>("");
   const [isPinned, setIsPinned] = useState<boolean>(false);
+  const [emojies, setEmojies] = useState<string[]>([]);
 
   useEffect(() => {
     dispatch({
@@ -33,10 +34,11 @@ const Home: NextPage<IHomePageProps> = props => {
     setTitle(notes.currentNote.title);
     setText(notes.currentNote.text);
     setIsPinned(notes.currentNote.isPinned);
+    setEmojies(notes.currentNote.emojies);
   }, [notes.currentNote]);
 
   async function onSave() {
-    dispatch(saveNote(title, text, isPinned));
+    dispatch(saveNote(title, text, isPinned, emojies));
   }
 
   async function onPin() {
@@ -58,7 +60,7 @@ const Home: NextPage<IHomePageProps> = props => {
               </a>
             </Link>
           </div>
-          <Emojies />
+          <Emojies value={emojies} setValue={setEmojies} />
           <Thumbtack value={isPinned} onClickHandler={onPin} />
         </div>
         <div className="lg:px-16">
