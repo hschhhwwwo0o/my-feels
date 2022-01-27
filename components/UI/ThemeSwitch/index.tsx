@@ -1,10 +1,8 @@
 import React, { FunctionComponent } from "react";
 
-interface IThemeSwitch {
-  onClickHandler?: () => any;
-}
+const ThemeSwitch: FunctionComponent = () => {
+  async function onClickHandler() {}
 
-const ThemeSwitch: FunctionComponent<IThemeSwitch> = ({ onClickHandler = () => {} }) => {
   return (
     <>
       <div
