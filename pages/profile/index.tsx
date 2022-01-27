@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import { useEffect, useState } from "react";
-import { IStore } from "redux";
-import { useSelector } from "react-redux";
+import { IStore, TypedDispatch } from "redux";
+import { useDispatch, useSelector } from "react-redux";
 import TheLayout from "layouts";
 import Link from "next/link";
 import BrandButton from "components/UI/BrandButton";
@@ -10,8 +10,10 @@ import MinimalLogo from "components/UI/MinimalLogo";
 import MoreButton from "components/UI/MoreButton";
 import SecondaryButton from "components/UI/SecondaryButton";
 import ThemeSwitch from "components/UI/ThemeSwitch";
+import { patchUser } from "redux/user/asyncActions";
 
 const Profile: NextPage<IProfilePageProps> = props => {
+  const dispatch: TypedDispatch = useDispatch();
   const { user }: IStore = useSelector((store: IStore) => store);
 
   const [name, setName] = useState<string>("");
@@ -24,6 +26,10 @@ const Profile: NextPage<IProfilePageProps> = props => {
     setLastName(user.lastName);
     setEmail(user.email);
   }, [user]);
+
+  async function onSave() {
+    dispatch(patchUser(email, password, name, lastName));
+  }
 
   return (
     <TheLayout>
@@ -57,7 +63,7 @@ const Profile: NextPage<IProfilePageProps> = props => {
             <div className="flex flex-col gap-3">
               <div className="mt-9">
                 <div>
-                  <BrandButton>Save</BrandButton>
+                  <BrandButton onClickHandler={onSave}>Save</BrandButton>
                 </div>
               </div>
               <div className="flex flex-row gap-3">
