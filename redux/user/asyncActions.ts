@@ -27,7 +27,6 @@ export function reAuthenticate(router: NextRouter) {
     try {
       const { user } = await feathersClient.reAuthenticate();
       dispatch({ type: "SET_USER", payload: user });
-      router.push("/");
     } catch (error) {
       console.error(error);
       router.push("/create-an-account");
@@ -91,6 +90,26 @@ export function patchUser(email: string, password: string, firstName: string, la
       await feathersClient.service("users").patch(getState().user._id, {
         email,
         password,
+        firstName,
+        lastName,
+      });
+    } catch (error) {
+      console.error(error);
+    }
+  };
+}
+
+export function meetUser(firstName: string, lastName: string) {
+  return async function (dispatch: TypedDispatch, getState: () => TypedState) {
+    try {
+      dispatch({
+        type: "MEET_USER",
+        payload: {
+          firstName,
+          lastName,
+        },
+      });
+      await feathersClient.service("users").patch(getState().user._id, {
         firstName,
         lastName,
       });

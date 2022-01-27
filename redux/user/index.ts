@@ -7,6 +7,11 @@ function userReducer(state = initialUserStore, action: any): typeof initialUserS
         ...state,
         ...action.payload,
       };
+    case "MEET_USER":
+      return {
+        ...state,
+        ...action.payload,
+      };
     case "CHANGE_USER_THEME":
       return {
         ...state,

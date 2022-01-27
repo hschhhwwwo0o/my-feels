@@ -2,15 +2,17 @@ import { configureStore, EnhancedStore } from "@reduxjs/toolkit";
 import userReducer from "./user";
 import notesReducer from "./notes";
 
-type IStore = EnhancedStore<{
+export type IStore = {
   user: IUser;
   notes: {
     pinnedNotes: INote[];
     notes: INote[];
   };
-}>;
+};
 
-const store: IStore = configureStore({
+type IStoreReducer = EnhancedStore<IStore>;
+
+const store: IStoreReducer = configureStore({
   reducer: {
     user: userReducer,
     notes: notesReducer,
