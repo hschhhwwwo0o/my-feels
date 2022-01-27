@@ -41,7 +41,7 @@ const Profile: NextPage<IProfilePageProps> = props => {
           <div className="lg:hidden">
             <MinimalLogo />
           </div>
-          <div className="text-base lg:text-lg underline dark:text-[#E8E8E8] transition-all duration-500">
+          <div className="text-base lg:text-lg underline dark:text-[#E8E8E8] transition-all duration-1000">
             Personal Account Settings
           </div>
           <div className="opacity-0 lg:hidden">
