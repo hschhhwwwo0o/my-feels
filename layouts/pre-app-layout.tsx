@@ -1,16 +1,25 @@
 import { NextRouter, useRouter } from "next/router";
 import React, { FunctionComponent, ReactNode, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { IStore } from "redux";
 import { TypedDispatch } from "redux";
+import { setNotes } from "redux/notes/asyncActions";
 import { reAuthenticate } from "redux/user/asyncActions";
 
 const ThePreApplicationLayout: FunctionComponent<{ children: ReactNode }> = ({ children }) => {
+  const { user }: IStore = useSelector((store: IStore) => store);
   const dispatch: TypedDispatch = useDispatch();
   const router: NextRouter = useRouter();
 
   useEffect(() => {
     dispatch(reAuthenticate(router));
   }, []);
+
+  useEffect(() => {
+    if (user._id) {
+      dispatch(setNotes());
+    }
+  }, [user]);
 
   return (
     <div className="">
