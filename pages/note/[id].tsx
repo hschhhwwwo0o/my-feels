@@ -32,6 +32,7 @@ const Home: NextPage<IHomePageProps> = props => {
   useEffect(() => {
     setTitle(notes.currentNote.title);
     setText(notes.currentNote.text);
+    setIsPinned(notes.currentNote.isPinned);
   }, [notes.currentNote]);
 
   async function onSave() {
@@ -53,7 +54,12 @@ const Home: NextPage<IHomePageProps> = props => {
             </Link>
           </div>
           <Emojies />
-          <Thumbtack />
+          <Thumbtack
+            value={isPinned}
+            onClickHandler={() => {
+              setIsPinned(!isPinned);
+            }}
+          />
         </div>
         <div className="lg:px-16">
           <input
