@@ -8,6 +8,7 @@ import { createAnAccount } from "redux/user/asyncActions";
 import { NextRouter, useRouter } from "next/router";
 import { TypedDispatch } from "redux";
 import { useDispatch } from "react-redux";
+import Link from "next/link";
 
 const CreateAnAccount: NextPage = props => {
   const dispatch: TypedDispatch = useDispatch();
@@ -33,7 +34,12 @@ const CreateAnAccount: NextPage = props => {
         and we also made an improved mobile version.
         <br />
         <br />
-        The new site includes an Open Access section, that”
+        Already have an account?{" "}
+        <Link href="/login">
+          <a>
+            <span className="underline">Sign in</span>
+          </a>
+        </Link>
       </div>
       <div className="mt-9 lg:mt-12 flex flex-col justify-center items-center">
         <h2 className="text-center font-semibold text-lg lg:text-2xl text-[#2F2F2F] dark:text-[#E8E8E8]">

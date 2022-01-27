@@ -3,6 +3,7 @@ import BrandButton from "components/UI/BrandButton";
 import Input from "components/UI/Input";
 import Logo from "components/UI/Logo";
 import TheLayout from "layouts";
+import Link from "next/link";
 
 const Login: NextPage = props => {
   return (
@@ -18,7 +19,12 @@ const Login: NextPage = props => {
         and we also made an improved mobile version.
         <br />
         <br />
-        The new site includes an Open Access section, that”
+        Don't have an account yet?{" "}
+        <Link href="/create-an-account">
+          <a>
+            <span className="underline">Create an account</span>
+          </a>
+        </Link>
       </div>
       <div className="mt-9 lg:mt-12 flex flex-col justify-center items-center">
         <h2 className="text-center font-semibold text-lg lg:text-2xl text-[#2F2F2F] dark:text-[#E8E8E8]">Login</h2>
