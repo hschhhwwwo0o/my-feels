@@ -1,5 +1,7 @@
 import type { NextPage } from "next";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { IStore } from "redux";
+import { useSelector } from "react-redux";
 import TheLayout from "layouts";
 import Link from "next/link";
 import BrandButton from "components/UI/BrandButton";
@@ -10,10 +12,18 @@ import SecondaryButton from "components/UI/SecondaryButton";
 import ThemeSwitch from "components/UI/ThemeSwitch";
 
 const Profile: NextPage<IProfilePageProps> = props => {
+  const { user }: IStore = useSelector((store: IStore) => store);
+
   const [name, setName] = useState<string>("");
   const [lastName, setLastName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+
+  useEffect(() => {
+    setName(user.firstName);
+    setLastName(user.lastName);
+    setEmail(user.email);
+  }, [user]);
 
   return (
     <TheLayout>
