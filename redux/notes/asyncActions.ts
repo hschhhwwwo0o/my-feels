@@ -1,3 +1,4 @@
+import { NextRouter } from "next/router";
 import { TypedDispatch } from "redux";
 import feathersClient from "utils/feathers";
 
@@ -35,11 +36,12 @@ export function removeNote(id: string) {
   };
 }
 
-export function addNote(title: string) {
+export function addNote(title: string, authorID: string, router: NextRouter) {
   return async function (dispatch: TypedDispatch) {
     try {
       const response = await feathersClient.service("notes").create({
         title,
+        authorID,
       });
       dispatch({
         type: "ADD_NOTE",
@@ -47,6 +49,7 @@ export function addNote(title: string) {
           note: response,
         },
       });
+      router.push(`/note/${response._id}`);
     } catch (error) {
       console.error(error);
     }
