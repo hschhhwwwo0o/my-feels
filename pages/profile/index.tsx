@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import { NextRouter, useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { IStore, TypedDispatch } from "redux";
 import { useDispatch, useSelector } from "react-redux";
@@ -13,6 +14,7 @@ import ThemeSwitch from "components/UI/ThemeSwitch";
 import { patchUser } from "redux/user/asyncActions";
 
 const Profile: NextPage<IProfilePageProps> = props => {
+  const router: NextRouter = useRouter();
   const dispatch: TypedDispatch = useDispatch();
   const { user }: IStore = useSelector((store: IStore) => store);
 
@@ -29,6 +31,7 @@ const Profile: NextPage<IProfilePageProps> = props => {
 
   async function onSave() {
     dispatch(patchUser(email, password, name, lastName));
+    router.push("/");
   }
 
   return (
