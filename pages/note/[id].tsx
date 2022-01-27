@@ -9,6 +9,7 @@ import { IStore, TypedDispatch } from "redux";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { NextRouter, useRouter } from "next/router";
+import { saveNote } from "redux/notes/asyncActions";
 
 const Home: NextPage<IHomePageProps> = props => {
   const { notes }: IStore = useSelector((store: IStore) => store);
@@ -17,6 +18,7 @@ const Home: NextPage<IHomePageProps> = props => {
 
   const [title, setTitle] = useState<string>("");
   const [text, setText] = useState<string>("");
+  const [isPinned, setIsPinned] = useState<boolean>(false);
 
   useEffect(() => {
     dispatch({
@@ -32,16 +34,24 @@ const Home: NextPage<IHomePageProps> = props => {
     setText(notes.currentNote.text);
   }, [notes.currentNote]);
 
+  async function onSave() {
+    dispatch(saveNote(title, text, isPinned));
+  }
+
   return (
     <TheLayout>
       <div className="h-full">
         <div className="h-16 shadow-sm dark:shadow-md w-full min-w-[100vw] -ml-5 lg:-ml-0 lg:min-w-[613px] flex flex-row justify-between items-center px-5 lg:px-[120px]">
-          <MinimalLogo />
-          <Link href="/">
-            <a>
-              <BackButton />
-            </a>
-          </Link>
+          <div onClick={onSave}>
+            <MinimalLogo />
+          </div>
+          <div onClick={onSave}>
+            <Link href="/">
+              <a>
+                <BackButton />
+              </a>
+            </Link>
+          </div>
           <Emojies />
           <Thumbtack />
         </div>

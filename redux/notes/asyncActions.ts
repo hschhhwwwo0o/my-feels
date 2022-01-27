@@ -63,3 +63,26 @@ export function addNote(title: string, authorID: string, router: NextRouter) {
     }
   };
 }
+
+export function saveNote(title: string, text: string, isPinned: boolean) {
+  return async function (dispatch: TypedDispatch, getState: () => any) {
+    try {
+      const response = await feathersClient.service("notes").patch(getState().notes.currentNote._id, {
+        title,
+        text,
+        isPinned,
+      });
+      dispatch({
+        type: "SAVE_NOTE",
+        payload: {
+          note: {
+            ...response,
+          },
+          isPinned,
+        },
+      });
+    } catch (error) {
+      console.error(error);
+    }
+  };
+}

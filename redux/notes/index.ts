@@ -1,3 +1,4 @@
+import store from "redux";
 import { initialNotesStore, INotesStore } from "./initialStore";
 
 function notesReducer(state = initialNotesStore, action: any): INotesStore {
@@ -29,14 +30,31 @@ function notesReducer(state = initialNotesStore, action: any): INotesStore {
     case "SAVE_NOTE":
       if (action.payload.note.isPinned) {
         return {
-          ...state,
+          currentNote: {
+            ...state.currentNote,
+            title: "",
+            text: "",
+            createdAt: "",
+            updatedAt: "",
+            _id: "",
+          },
           notes: state.notes,
-          pinnedNotes: [action.payload.note, ...state.pinnedNotes],
+          pinnedNotes: [
+            action.payload.note,
+            ...state.pinnedNotes.filter((note: INote) => note._id !== action.payload.note._id),
+          ],
         };
       } else {
         return {
-          ...state,
-          notes: [action.payload.note, ...state.notes],
+          currentNote: {
+            ...state.currentNote,
+            title: "",
+            text: "",
+            createdAt: "",
+            updatedAt: "",
+            _id: "",
+          },
+          notes: [action.payload.note, ...state.notes.filter((note: INote) => note._id !== action.payload.note._id)],
           pinnedNotes: state.pinnedNotes,
         };
       }
