@@ -15,7 +15,7 @@ export function createAnAccount(email: string, password: string, router: NextRou
         strategy: "local",
       });
       dispatch({ type: "SET_USER", payload: user });
-      router.push("/");
+      router.push("/meet");
     } catch (error) {
       console.error(error);
     }
