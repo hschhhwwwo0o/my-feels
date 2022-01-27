@@ -6,7 +6,7 @@ const MinimalLogo: FunctionComponent = () => {
     <Link href="/">
       <a>
         <div className="cursor-pointer">
-          <h1 className="text-lg dark:text-white">
+          <h1 className="text-lg dark:text-white transition-all duration-1000">
             <i>m</i>
             <span className="font-bold">f</span>
           </h1>
