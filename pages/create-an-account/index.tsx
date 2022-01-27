@@ -3,8 +3,23 @@ import BrandButton from "components/UI/BrandButton";
 import Input from "components/UI/Input";
 import Logo from "components/UI/Logo";
 import TheLayout from "layouts";
+import { useState } from "react";
+import { createAnAccount } from "redux/user/asyncActions";
+import { NextRouter, useRouter } from "next/router";
+import { TypedDispatch } from "redux";
+import { useDispatch } from "react-redux";
 
 const CreateAnAccount: NextPage = props => {
+  const dispatch: TypedDispatch = useDispatch();
+  const router: NextRouter = useRouter();
+
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+
+  async function create() {
+    dispatch(createAnAccount(email, password, router));
+  }
+
   return (
     <TheLayout>
       <div className="flex items-center justify-center py-6 lg:py-12">
@@ -25,10 +40,9 @@ const CreateAnAccount: NextPage = props => {
           Create an account
         </h2>
         <div className="w-full lg:w-96 mt-5 lg:mt-6 flex flex-col gap-4 lg:gap-5">
-          <Input placeholder="Enter email..." />
-          <Input placeholder="Enter password..." />
-          <Input placeholder="Repeat password..." />
-          <BrandButton>Create</BrandButton>
+          <Input value={email} setValue={setEmail} placeholder="Enter email..." />
+          <Input value={password} setValue={setPassword} placeholder="Enter password..." type="password" />
+          <BrandButton onClickHandler={create}>Create</BrandButton>
         </div>
       </div>
     </TheLayout>
