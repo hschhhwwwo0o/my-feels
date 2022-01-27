@@ -1,14 +1,20 @@
 import type { NextPage } from "next";
+import { useState } from "react";
+import TheLayout from "layouts";
+import Link from "next/link";
 import BrandButton from "components/UI/BrandButton";
 import Input from "components/UI/Input";
 import MinimalLogo from "components/UI/MinimalLogo";
 import MoreButton from "components/UI/MoreButton";
 import SecondaryButton from "components/UI/SecondaryButton";
 import ThemeSwitch from "components/UI/ThemeSwitch";
-import TheLayout from "layouts";
-import Link from "next/link";
 
 const Profile: NextPage<IProfilePageProps> = props => {
+  const [name, setName] = useState<string>("");
+  const [lastName, setLastName] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+
   return (
     <TheLayout>
       <div className="flex flex-col items-center">
@@ -27,10 +33,10 @@ const Profile: NextPage<IProfilePageProps> = props => {
           </div>
         </div>
         <div className="w-full lg:w-96 flex flex-col gap-3">
-          <Input placeholder="Enter your name..." />
-          <Input placeholder="Enter your last name..." />
-          <Input placeholder="Enter your email..." />
-          <Input placeholder="Enter your new password..." />
+          <Input value={name} setValue={setName} placeholder="Enter your name..." />
+          <Input value={lastName} setValue={setLastName} placeholder="Enter your last name..." />
+          <Input value={email} setValue={setEmail} placeholder="Enter your email..." />
+          <Input value={password} setValue={setPassword} placeholder="Enter your new password..." />
           <div className="mt-1">
             <div className="text-sm dark:text-[#E8E8E8] transition-all duration-500">Theme</div>
             <div className="mt-3">
