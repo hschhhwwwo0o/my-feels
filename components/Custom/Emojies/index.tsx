@@ -15,7 +15,7 @@ const Emojies: FunctionComponent<IEmojies> = ({ value = [], setValue = () => {} 
           }}
           src="/emoji/cry.png"
           alt=""
-          className={`w-[22px] h-[22px] cursor-pointer transition-all duration-500 filter ${
+          className={`w-[22px] h-[22px] cursor-pointer transition-all duration-300 filter ${
             value.includes("cry") ? "" : "grayscale"
           }`}
         />
@@ -25,7 +25,7 @@ const Emojies: FunctionComponent<IEmojies> = ({ value = [], setValue = () => {} 
           }}
           src="/emoji/love.png"
           alt=""
-          className={`w-[22px] h-[22px] cursor-pointer transition-all duration-500 filter ${
+          className={`w-[22px] h-[22px] cursor-pointer transition-all duration-500 delay-75 filter ${
             value.includes("love") ? "" : "grayscale"
           }`}
         />
@@ -35,7 +35,7 @@ const Emojies: FunctionComponent<IEmojies> = ({ value = [], setValue = () => {} 
           }}
           src="/emoji/smile.png"
           alt=""
-          className={`w-[22px] h-[22px] cursor-pointer transition-all duration-500 filter ${
+          className={`w-[22px] h-[22px] cursor-pointer transition-all duration-700 delay-100 filter ${
             value.includes("smile") ? "" : "grayscale"
           }`}
         />
@@ -45,7 +45,7 @@ const Emojies: FunctionComponent<IEmojies> = ({ value = [], setValue = () => {} 
           }}
           src="/emoji/sparkles.png"
           alt=""
-          className={`w-[22px] h-[22px] cursor-pointer transition-all duration-500 filter ${
+          className={`w-[22px] h-[22px] cursor-pointer transition-all duration-1000 delay-150 filter ${
             value.includes("sparkles") ? "" : "grayscale"
           }`}
         />
