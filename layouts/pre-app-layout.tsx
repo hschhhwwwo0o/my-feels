@@ -17,7 +17,7 @@ const ThePreApplicationLayout: FunctionComponent<{ children: ReactNode }> = ({ c
 
   useEffect(() => {
     if (user._id) {
-      dispatch(setNotes());
+      dispatch(setNotes(router));
     }
   }, [user]);
 

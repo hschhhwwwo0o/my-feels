@@ -40,6 +40,15 @@ function notesReducer(state = initialNotesStore, action: any): INotesStore {
           pinnedNotes: state.pinnedNotes,
         };
       }
+    case "SET_CURRENT_NOTE":
+      const note: INote | undefined = state.notes.find((note: INote) => note._id === action.payload._id);
+      const pinnedNote: INote | undefined = state.pinnedNotes.find((note: INote) => note._id === action.payload._id);
+      const currentNote: any = note ? note : pinnedNote;
+
+      return {
+        ...state,
+        currentNote: currentNote ? currentNote : {},
+      };
     default:
       return state;
   }

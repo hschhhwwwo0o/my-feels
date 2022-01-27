@@ -2,7 +2,7 @@ import { NextRouter } from "next/router";
 import { TypedDispatch } from "redux";
 import feathersClient from "utils/feathers";
 
-export function setNotes() {
+export function setNotes(router: NextRouter) {
   return async function (dispatch: TypedDispatch) {
     try {
       const response = await feathersClient.service("notes").find({
@@ -19,6 +19,14 @@ export function setNotes() {
           notes: response.data,
         },
       });
+      if (router.query.id) {
+        dispatch({
+          type: "SET_CURRENT_NOTE",
+          payload: {
+            _id: router.query.id,
+          },
+        });
+      }
     } catch (error) {
       console.error(error);
     }

@@ -7,6 +7,7 @@ export type IStore = {
   notes: {
     pinnedNotes: INote[];
     notes: INote[];
+    currentNote: INote;
   };
 };
 
