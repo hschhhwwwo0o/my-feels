@@ -1,14 +1,22 @@
 import type { NextPage } from "next";
-import { IStore } from "redux";
-import { useSelector } from "react-redux";
+import { IStore, TypedDispatch } from "redux";
+import { useDispatch, useSelector } from "react-redux";
 import TheLayout from "layouts";
 import MinimalLogo from "components/UI/MinimalLogo";
 import SecondaryButton from "components/UI/SecondaryButton";
 import BrandButton from "components/UI/BrandButton";
 import Link from "next/link";
+import { logout } from "redux/user/asyncActions";
+import { NextRouter, useRouter } from "next/router";
 
 const More: NextPage<IProfilePageProps> = props => {
+  const router: NextRouter = useRouter();
+  const dispatch: TypedDispatch = useDispatch();
   const { user }: IStore = useSelector((store: IStore) => store);
+
+  function remove() {
+    dispatch(logout(router));
+  }
 
   return (
     <TheLayout>
@@ -48,7 +56,7 @@ const More: NextPage<IProfilePageProps> = props => {
                 </Link>
               </div>
               <div className="hidden lg:block">
-                <BrandButton>Remove account</BrandButton>
+                <BrandButton onClickHandler={remove}>Remove account</BrandButton>
               </div>
             </div>
           </div>
