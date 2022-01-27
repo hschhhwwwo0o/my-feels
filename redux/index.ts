@@ -4,6 +4,10 @@ import notesReducer from "./notes";
 
 type IStore = EnhancedStore<{
   user: IUser;
+  notes: {
+    pinnedNotes: INote[];
+    notes: INote[];
+  };
 }>;
 
 const store: IStore = configureStore({
@@ -13,6 +17,7 @@ const store: IStore = configureStore({
   },
 });
 
+export type TypedState = any;
 export type TypedDispatch = typeof store.dispatch;
 
 export default store;
