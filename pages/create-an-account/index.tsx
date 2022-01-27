@@ -65,7 +65,7 @@ const CreateAnAccount: NextPage = props => {
             Create an account
           </h2>
         </motion.div>
-        <div className="w-full lg:w-96 mt-5 lg:mt-6 flex flex-col gap-4 lg:gap-5">
+        <div className="w-full lg:w-96 mt-5 lg:mt-6 flex flex-col gap-4 lg:gap-5 pb-24">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

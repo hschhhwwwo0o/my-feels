@@ -54,7 +54,7 @@ const Login: NextPage = props => {
           </a>
         </Link>
       </motion.div>
-      <div className="mt-9 lg:mt-12 flex flex-col justify-center items-center">
+      <div className="mt-9 lg:mt-12 flex flex-col justify-center items-center pb-24">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

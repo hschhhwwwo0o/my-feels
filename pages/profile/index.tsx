@@ -102,7 +102,7 @@ const Profile: NextPage<IProfilePageProps> = props => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.7, delay: 0.5 }}
-            className="mt-1"
+            className="mt-1 pb-64 lg:pb-0"
           >
             <div className="text-sm dark:text-[#E8E8E8] transition-all duration-500">Theme</div>
             <div className="mt-3">
