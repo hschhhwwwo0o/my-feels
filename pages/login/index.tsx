@@ -27,11 +27,11 @@ const Login: NextPage = props => {
         <Logo />
       </div>
       <div className="text-base lg:text-lg text-[#2F2F2F] dark:text-[#e2e2e2] text-justify">
-        “Archive is the publishing house behind the most inspiring books all around Europe.
+        "My Feels" is a service for writing notes about your well-being with a minimal user interface.
         <br />
         <br />
-        We designed the Archive website with some exciting features to give users an even better access to their goodies
-        and we also made an improved mobile version.
+        Feel free to express your emotions to yourself, don't be ashamed of your feelings, don't be ashamed to be
+        yourself and your feeling will always be fine, we believe in it.
         <br />
         <br />
         Don't have an account yet?{" "}

@@ -32,16 +32,18 @@ const More: NextPage<IProfilePageProps> = props => {
                 Dear {user.firstName} {user.lastName}
               </div>
               <div className="text-[#444444] dark:text-[#B2B2B2] mt-[14px] text-sm lg:text-base">
-                “Archive is the publishing house behind the most inspiring books all around Europe.
+                I'm glad if you liked my app. Take care of yourself and don't be afraid to express your feelings! Our
+                world is beautiful and I wish you all the best!
                 <br />
                 <br />
-                We designed the Archive website with some exciting features to give users an even better access to their
-                goodies and we also made an improved mobile version. We designed the Archive website with some exciting
-                features to give users an even better access to their goodies and we also made an improved mobile
-                version.
+                Unfortunately, because I use a free Heroku server, sometimes the app can take a long time and the server
+                can freeze, but if you like my app, please give it a star on GitHub.
                 <br />
                 <br />
-                books all around Europe.
+                If you want to remove the account, please leave feedback so my app can get better.
+                <br />
+                <br />
+                myfeels.feedback@gmail.com
               </div>
               <div className="lg:hidden mt-4">
                 <BrandButton>Remove account</BrandButton>
