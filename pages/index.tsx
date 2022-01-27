@@ -25,7 +25,7 @@ const Home: NextPage<IHomePageProps> = props => {
           </a>
         </Link>
         {notes.pinnedNotes.length ? (
-          <div>
+          <div className="pb-6 lg:pb-12">
             <div className="text-[#242424] dark:text-[#E8E8E8] text-sm font-medium">Pinned</div>
             <div className="grid grid-cols-2 gap-4 lg:gap-8 mt-3">
               {notes.pinnedNotes.map((note: INote, index) => {
@@ -37,7 +37,7 @@ const Home: NextPage<IHomePageProps> = props => {
           ""
         )}
         {notes.notes.length ? (
-          <div className="mt-12">
+          <div className="mt-0">
             <div className="text-[#242424] dark:text-[#E8E8E8] text-sm font-medium">All</div>
             <div className="grid grid-cols-2 gap-3 lg:gap-8 mt-3">
               {notes.notes.map((note: INote, index) => {
