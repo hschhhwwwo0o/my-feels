@@ -1,11 +1,15 @@
 import type { NextPage } from "next";
+import { useState } from "react";
+import TheLayout from "layouts";
 import BrandButton from "components/UI/BrandButton";
 import Input from "components/UI/Input";
 import Logo from "components/UI/Logo";
 import ThemeSwitch from "components/UI/ThemeSwitch";
-import TheLayout from "layouts";
 
 const Meet: NextPage = props => {
+  const [name, setName] = useState<string>("");
+  const [lastName, setLastName] = useState<string>("");
+
   return (
     <TheLayout>
       <div className="flex items-center justify-center py-6 lg:py-12">
@@ -19,8 +23,8 @@ const Meet: NextPage = props => {
           Let's get acquainted
         </h2>
         <div className="w-full lg:w-96 mt-5 lg:mt-6 flex flex-col gap-4 lg:gap-5">
-          <Input placeholder="Enter your name..." />
-          <Input placeholder="Enter your last name" />
+          <Input value={name} setValue={setName} placeholder="Enter your name..." />
+          <Input value={lastName} setValue={setLastName} placeholder="Enter your last name" />
           <div className="mt-1">
             <div className="text-sm dark:text-[#E8E8E8] transition-all duration-500">Theme</div>
             <div className="mt-3">

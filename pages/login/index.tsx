@@ -1,11 +1,15 @@
 import type { NextPage } from "next";
+import { useState } from "react";
+import TheLayout from "layouts";
+import Link from "next/link";
 import BrandButton from "components/UI/BrandButton";
 import Input from "components/UI/Input";
 import Logo from "components/UI/Logo";
-import TheLayout from "layouts";
-import Link from "next/link";
 
 const Login: NextPage = props => {
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+
   return (
     <TheLayout>
       <div className="flex items-center justify-center py-6 lg:py-12">
@@ -29,8 +33,8 @@ const Login: NextPage = props => {
       <div className="mt-9 lg:mt-12 flex flex-col justify-center items-center">
         <h2 className="text-center font-semibold text-lg lg:text-2xl text-[#2F2F2F] dark:text-[#E8E8E8]">Login</h2>
         <div className="w-full lg:w-96 mt-5 lg:mt-6 flex flex-col gap-4 lg:gap-5">
-          <Input placeholder="Enter email..." />
-          <Input placeholder="Enter password..." />
+          <Input value={email} setValue={setEmail} placeholder="Enter email..." />
+          <Input value={password} setValue={setPassword} placeholder="Enter password..." />
           <BrandButton>Login</BrandButton>
         </div>
       </div>

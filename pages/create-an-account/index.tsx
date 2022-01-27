@@ -1,13 +1,13 @@
 import type { NextPage } from "next";
-import BrandButton from "components/UI/BrandButton";
-import Input from "components/UI/Input";
-import Logo from "components/UI/Logo";
-import TheLayout from "layouts";
 import { useState } from "react";
 import { createAnAccount } from "redux/user/asyncActions";
 import { NextRouter, useRouter } from "next/router";
 import { TypedDispatch } from "redux";
 import { useDispatch } from "react-redux";
+import TheLayout from "layouts";
+import BrandButton from "components/UI/BrandButton";
+import Input from "components/UI/Input";
+import Logo from "components/UI/Logo";
 import Link from "next/link";
 
 const CreateAnAccount: NextPage = props => {
