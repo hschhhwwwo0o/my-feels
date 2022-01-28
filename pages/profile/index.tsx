@@ -3,10 +3,8 @@ import { NextRouter, useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { IStore, TypedDispatch } from "redux";
 import { useDispatch, useSelector } from "react-redux";
-import { motion } from "framer-motion";
 import TheLayout from "layouts";
 import { Link as Anchor } from "react-scroll";
-import Link from "next/link";
 import BrandButton from "components/UI/BrandButton";
 import Input from "components/UI/Input";
 import MinimalLogo from "components/UI/MinimalLogo";
@@ -14,6 +12,7 @@ import MoreButton from "components/UI/MoreButton";
 import SecondaryButton from "components/UI/SecondaryButton";
 import ThemeSwitch from "components/UI/ThemeSwitch";
 import { patchUser } from "redux/user/asyncActions";
+import Motion from "components/Motion";
 
 const Profile: NextPage<IProfilePageProps> = props => {
   const router: NextRouter = useRouter();
@@ -53,107 +52,66 @@ const Profile: NextPage<IProfilePageProps> = props => {
   return (
     <TheLayout>
       <div className="flex flex-col items-center">
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.7 }}
-          className="py-12 hidden lg:block"
-        >
-          <MinimalLogo />
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.7 }}
-          className="flex justify-between lg:justify-center w-full pb-9 pt-9 lg:pt-0 lg:pb-12"
-        >
-          <div className="lg:hidden">
+        <Motion delay={0}>
+          <div className="py-12 hidden lg:block">
             <MinimalLogo />
           </div>
-          <div className="text-base lg:text-lg underline dark:text-[#E8E8E8] transition-all duration-1000">
-            Personal Account Settings
-          </div>
-          <div className="opacity-0 lg:hidden">
-            <MinimalLogo />
-          </div>
-        </motion.div>
-        <div className="w-full lg:w-96 flex flex-col gap-3">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-          >
-            <Input value={name} setValue={setName} placeholder="Enter your name..." />
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-          >
-            <Input value={lastName} setValue={setLastName} placeholder="Enter your last name..." />
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.7, delay: 0.3 }}
-          >
-            <Input value={email} setValue={setEmail} placeholder="Enter your email..." />
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.7, delay: 0.4 }}
-          >
-            <Input value={password} setValue={setPassword} placeholder="Enter your new password..." />
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.7, delay: 0.5 }}
-            className="mt-1 lg:pb-0"
-          >
-            <div className="text-sm dark:text-[#E8E8E8] transition-all duration-500">Theme</div>
-            <div className="mt-3">
-              <ThemeSwitch />
+        </Motion>
+        <Motion delay={0.1}>
+          <div className="flex justify-between lg:justify-center w-full pb-9 pt-9 lg:pt-0 lg:pb-12">
+            <div className="lg:hidden">
+              <MinimalLogo />
             </div>
-          </motion.div>
+            <div className="text-base lg:text-lg underline dark:text-[#E8E8E8] transition-all duration-1000">
+              Personal Account Settings
+            </div>
+            <div className="opacity-0 lg:hidden">
+              <MinimalLogo />
+            </div>
+          </div>
+        </Motion>
+        <div className="w-full lg:w-96 flex flex-col gap-3">
+          <Motion delay={0.2}>
+            <Input value={name} setValue={setName} placeholder="Enter your name..." />
+          </Motion>
+          <Motion delay={0.3}>
+            <Input value={lastName} setValue={setLastName} placeholder="Enter your last name..." />
+          </Motion>
+          <Motion delay={0.4}>
+            <Input value={email} setValue={setEmail} placeholder="Enter your email..." />
+          </Motion>
+          <Motion delay={0.5}>
+            <Input value={password} setValue={setPassword} placeholder="Enter your new password..." />
+          </Motion>
+          <Motion delay={0.6}>
+            <div className="mt-1 lg:pb-0">
+              <div className="text-sm dark:text-[#E8E8E8] transition-all duration-500">Theme</div>
+              <div className="mt-3">
+                <ThemeSwitch />
+              </div>
+            </div>
+          </Motion>
           <div className="w-full px-0 pb-14">
             <div className="flex flex-col gap-3">
               <div className="mt-9">
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.7, delay: 0.7 }}
-                >
+                <Motion delay={0.7}>
                   <Anchor to="#header" smooth={true} duration={600}>
                     <BrandButton onClickHandler={onSave}>Save</BrandButton>
                   </Anchor>
-                </motion.div>
+                </Motion>
               </div>
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.7, delay: 0.9 }}
-                className="flex flex-row gap-3"
-              >
-                <div className="w-full">
+              <Motion delay={0.8}>
+                <div className="flex flex-row gap-3">
+                  <div className="w-full">
+                    <Anchor to="#header" smooth={true} duration={600}>
+                      <SecondaryButton onClickHandler={cancel}>Cancel</SecondaryButton>
+                    </Anchor>
+                  </div>
                   <Anchor to="#header" smooth={true} duration={600}>
-                    <SecondaryButton onClickHandler={cancel}>Cancel</SecondaryButton>
+                    <MoreButton onClickHandler={redirectToMore} />
                   </Anchor>
                 </div>
-                <Anchor to="#header" smooth={true} duration={600}>
-                  <MoreButton onClickHandler={redirectToMore} />
-                </Anchor>
-              </motion.div>
+              </Motion>
             </div>
           </div>
         </div>
