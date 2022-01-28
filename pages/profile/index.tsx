@@ -102,14 +102,14 @@ const Profile: NextPage<IProfilePageProps> = props => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.7, delay: 0.5 }}
-            className="mt-1 pb-64 lg:pb-0"
+            className="mt-1 lg:pb-0"
           >
             <div className="text-sm dark:text-[#E8E8E8] transition-all duration-500">Theme</div>
             <div className="mt-3">
               <ThemeSwitch />
             </div>
           </motion.div>
-          <div className="w-full left-0 px-6 lg:px-0 fixed bottom-5 lg:w-full lg:relative lg:bottom-0">
+          <div className="w-full px-0">
             <div className="flex flex-col gap-3">
               <div className="mt-9">
                 <motion.div
