@@ -3,14 +3,23 @@ import { IStore } from "redux";
 import { useSelector } from "react-redux";
 import { motion } from "framer-motion";
 import TheLayout from "layouts";
+import { Link as Anchor } from "react-scroll";
 import Link from "next/link";
 import MinimalLogo from "components/UI/MinimalLogo";
 import NoteCard from "components/UI/NoteCard";
 import BrandButton from "components/UI/BrandButton";
 import AddCircleButton from "components/UI/AddCircleButton";
+import { NextRouter, useRouter } from "next/router";
 
 const Home: NextPage<IHomePageProps> = props => {
+  const router: NextRouter = useRouter();
   const { notes, user }: IStore = useSelector((store: IStore) => store);
+
+  function redirectToAddNote() {
+    setTimeout(() => {
+      router.push(`/add-note`);
+    }, 610);
+  }
 
   return (
     <TheLayout>
@@ -91,11 +100,9 @@ const Home: NextPage<IHomePageProps> = props => {
           className="fixed w-full left-0 px-5 bottom-5 lg:hidden"
         >
           <div className="shadow-2xl">
-            <Link href="/add-note">
-              <a>
-                <BrandButton>Add Note</BrandButton>
-              </a>
-            </Link>
+            <Anchor to="#header" smooth={true} duration={600}>
+              <BrandButton onClickHandler={redirectToAddNote}>Add Note</BrandButton>
+            </Anchor>
           </div>
         </motion.div>
         <motion.div

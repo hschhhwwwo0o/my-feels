@@ -5,6 +5,7 @@ import { IStore, TypedDispatch } from "redux";
 import { useDispatch, useSelector } from "react-redux";
 import { motion } from "framer-motion";
 import TheLayout from "layouts";
+import { Link as Anchor } from "react-scroll";
 import Link from "next/link";
 import BrandButton from "components/UI/BrandButton";
 import Input from "components/UI/Input";
@@ -32,7 +33,21 @@ const Profile: NextPage<IProfilePageProps> = props => {
 
   async function onSave() {
     dispatch(patchUser(email, password, name, lastName));
-    router.push("/");
+    setTimeout(() => {
+      router.push("/");
+    }, 610);
+  }
+
+  function redirectToMore() {
+    setTimeout(() => {
+      router.push("/more");
+    }, 610);
+  }
+
+  function cancel() {
+    setTimeout(() => {
+      router.push("/");
+    }, 610);
   }
 
   return (
@@ -109,7 +124,7 @@ const Profile: NextPage<IProfilePageProps> = props => {
               <ThemeSwitch />
             </div>
           </motion.div>
-          <div className="w-full px-0">
+          <div className="w-full px-0 pb-14">
             <div className="flex flex-col gap-3">
               <div className="mt-9">
                 <motion.div
@@ -118,7 +133,9 @@ const Profile: NextPage<IProfilePageProps> = props => {
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.7, delay: 0.7 }}
                 >
-                  <BrandButton onClickHandler={onSave}>Save</BrandButton>
+                  <Anchor to="#header" smooth={true} duration={600}>
+                    <BrandButton onClickHandler={onSave}>Save</BrandButton>
+                  </Anchor>
                 </motion.div>
               </div>
               <motion.div
@@ -129,17 +146,13 @@ const Profile: NextPage<IProfilePageProps> = props => {
                 className="flex flex-row gap-3"
               >
                 <div className="w-full">
-                  <Link href="/">
-                    <a>
-                      <SecondaryButton>Cancel</SecondaryButton>
-                    </a>
-                  </Link>
+                  <Anchor to="#header" smooth={true} duration={600}>
+                    <SecondaryButton onClickHandler={cancel}>Cancel</SecondaryButton>
+                  </Anchor>
                 </div>
-                <Link href="/more">
-                  <a>
-                    <MoreButton />
-                  </a>
-                </Link>
+                <Anchor to="#header" smooth={true} duration={600}>
+                  <MoreButton onClickHandler={redirectToMore} />
+                </Anchor>
               </motion.div>
             </div>
           </div>
