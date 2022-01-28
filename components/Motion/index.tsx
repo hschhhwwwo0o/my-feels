@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import React, { FunctionComponent } from "react";
+import { MotionConfig } from "motion.config";
 
 interface IMotion {
   delay: number;
@@ -8,10 +9,10 @@ interface IMotion {
 const Motion: FunctionComponent<IMotion> = ({ children, delay = 0 }) => {
   return (
     <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.73, delay }}
+      initial={{ opacity: MotionConfig.initialOpacity }}
+      animate={{ opacity: MotionConfig.defaultOpacity }}
+      exit={{ opacity: MotionConfig.initialOpacity }}
+      transition={{ duration: MotionConfig.defaultOpacity, delay }}
     >
       {children}
     </motion.div>
