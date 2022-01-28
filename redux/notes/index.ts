@@ -1,4 +1,3 @@
-import store from "redux";
 import { initialNotesStore, INotesStore } from "./initialStore";
 
 function notesReducer(state = initialNotesStore, action: any): INotesStore {
