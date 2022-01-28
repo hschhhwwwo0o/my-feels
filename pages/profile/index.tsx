@@ -3,16 +3,16 @@ import { NextRouter, useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { IStore, TypedDispatch } from "redux";
 import { useDispatch, useSelector } from "react-redux";
+import { patchUser } from "redux/user/asyncActions";
 import TheLayout from "layouts";
 import { Link as Anchor } from "react-scroll";
+import Motion from "components/Motion";
 import BrandButton from "components/UI/BrandButton";
 import Input from "components/UI/Input";
 import MinimalLogo from "components/UI/MinimalLogo";
 import MoreButton from "components/UI/MoreButton";
 import SecondaryButton from "components/UI/SecondaryButton";
 import ThemeSwitch from "components/UI/ThemeSwitch";
-import { patchUser } from "redux/user/asyncActions";
-import Motion from "components/Motion";
 
 const Profile: NextPage<IProfilePageProps> = props => {
   const router: NextRouter = useRouter();

@@ -1,15 +1,15 @@
 import type { NextPage } from "next";
+import { NextRouter, useRouter } from "next/router";
 import { IStore } from "redux";
 import { useSelector } from "react-redux";
 import TheLayout from "layouts";
+import Motion from "components/Motion";
 import { Link as Anchor } from "react-scroll";
 import Link from "next/link";
 import MinimalLogo from "components/UI/MinimalLogo";
 import NoteCard from "components/UI/NoteCard";
 import BrandButton from "components/UI/BrandButton";
 import AddCircleButton from "components/UI/AddCircleButton";
-import { NextRouter, useRouter } from "next/router";
-import Motion from "components/Motion";
 
 const Home: NextPage<IHomePageProps> = props => {
   const router: NextRouter = useRouter();

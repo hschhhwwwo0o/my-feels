@@ -4,12 +4,12 @@ import { createAnAccount } from "redux/user/asyncActions";
 import { NextRouter, useRouter } from "next/router";
 import { TypedDispatch } from "redux";
 import { useDispatch } from "react-redux";
-import Motion from "components/Motion";
 import TheLayout from "layouts";
+import Link from "next/link";
+import Motion from "components/Motion";
 import BrandButton from "components/UI/BrandButton";
 import Input from "components/UI/Input";
 import Logo from "components/UI/Logo";
-import Link from "next/link";
 
 const CreateAnAccount: NextPage = props => {
   const dispatch: TypedDispatch = useDispatch();

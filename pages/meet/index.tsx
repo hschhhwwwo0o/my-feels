@@ -5,11 +5,11 @@ import { TypedDispatch } from "redux";
 import { useDispatch } from "react-redux";
 import { meetUser } from "redux/user/asyncActions";
 import TheLayout from "layouts";
+import Motion from "components/Motion";
 import BrandButton from "components/UI/BrandButton";
 import Input from "components/UI/Input";
 import Logo from "components/UI/Logo";
 import ThemeSwitch from "components/UI/ThemeSwitch";
-import Motion from "components/Motion";
 
 const Meet: NextPage = props => {
   const dispatch: TypedDispatch = useDispatch();

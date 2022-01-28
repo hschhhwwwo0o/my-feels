@@ -1,14 +1,14 @@
 import type { NextPage } from "next";
 import { IStore, TypedDispatch } from "redux";
 import { useDispatch, useSelector } from "react-redux";
+import { logout } from "redux/user/asyncActions";
+import { NextRouter, useRouter } from "next/router";
 import TheLayout from "layouts";
 import { Link as Anchor } from "react-scroll";
+import Motion from "components/Motion";
 import MinimalLogo from "components/UI/MinimalLogo";
 import SecondaryButton from "components/UI/SecondaryButton";
 import BrandButton from "components/UI/BrandButton";
-import { logout } from "redux/user/asyncActions";
-import { NextRouter, useRouter } from "next/router";
-import Motion from "components/Motion";
 
 const More: NextPage<IProfilePageProps> = props => {
   const router: NextRouter = useRouter();

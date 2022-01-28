@@ -5,13 +5,13 @@ import { useEffect, useState } from "react";
 import { NextRouter, useRouter } from "next/router";
 import { pinNote, saveNote } from "redux/notes/asyncActions";
 import moment from "moment";
-import Link from "next/link";
 import TheLayout from "layouts";
+import Link from "next/link";
+import Motion from "components/Motion";
 import MinimalLogo from "components/UI/MinimalLogo";
 import BackButton from "components/UI/BackButton";
 import Emojies from "components/Custom/Emojies";
 import Thumbtack from "components/UI/Thumbtack";
-import Motion from "components/Motion";
 import Textarea from "components/UI/Textarea";
 import InputNoteTitleH2 from "components/UI/InputNoteTitleH2";
 

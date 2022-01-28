@@ -1,16 +1,16 @@
 import type { NextPage } from "next";
 import { TypedDispatch } from "redux";
 import { useDispatch, useSelector } from "react-redux";
-import TheLayout from "layouts";
-import MinimalLogo from "components/UI/MinimalLogo";
-import SecondaryButton from "components/UI/SecondaryButton";
-import BrandButton from "components/UI/BrandButton";
-import Link from "next/link";
 import { useState } from "react";
 import { addNote } from "redux/notes/asyncActions";
 import { IStore } from "redux";
 import { NextRouter, useRouter } from "next/router";
+import TheLayout from "layouts";
+import Link from "next/link";
 import Motion from "components/Motion";
+import MinimalLogo from "components/UI/MinimalLogo";
+import SecondaryButton from "components/UI/SecondaryButton";
+import BrandButton from "components/UI/BrandButton";
 
 const CreateNote: NextPage<IHomePageProps> = props => {
   const dispatch: TypedDispatch = useDispatch();
