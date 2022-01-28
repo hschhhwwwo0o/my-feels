@@ -118,11 +118,9 @@ const More: NextPage<IProfilePageProps> = props => {
                 transition={{ duration: 0.7, delay: 0.5 }}
                 className="hidden lg:block"
               >
-                <Link href="/profile">
-                  <a>
-                    <SecondaryButton>Back</SecondaryButton>
-                  </a>
-                </Link>
+                <Anchor to="#header" smooth={true} duration={600}>
+                  <SecondaryButton onClickHandler={back}>Back</SecondaryButton>
+                </Anchor>
               </motion.div>
               <motion.div
                 initial={{ opacity: 0 }}
