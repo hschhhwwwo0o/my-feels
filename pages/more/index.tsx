@@ -7,7 +7,6 @@ import { Link as Anchor } from "react-scroll";
 import MinimalLogo from "components/UI/MinimalLogo";
 import SecondaryButton from "components/UI/SecondaryButton";
 import BrandButton from "components/UI/BrandButton";
-import Link from "next/link";
 import { logout } from "redux/user/asyncActions";
 import { NextRouter, useRouter } from "next/router";
 
