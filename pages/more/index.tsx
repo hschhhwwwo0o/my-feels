@@ -104,7 +104,7 @@ const More: NextPage<IProfilePageProps> = props => {
           </div>
         </div>
         <Motion delay={0.6}>
-          <div className="fixed lg:hidden w-full bottom-5 px-5">
+          <div className="fixed lg:hidden w-full bottom-5 px-5 left-0">
             <Anchor to="#header" smooth={true} duration={600}>
               <SecondaryButton onClickHandler={back}>Back</SecondaryButton>
             </Anchor>

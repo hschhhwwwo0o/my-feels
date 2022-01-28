@@ -59,14 +59,8 @@ const Profile: NextPage<IProfilePageProps> = props => {
         </Motion>
         <Motion delay={0.1}>
           <div className="flex justify-between lg:justify-center w-full pb-9 pt-9 lg:pt-0 lg:pb-12">
-            <div className="lg:hidden">
-              <MinimalLogo />
-            </div>
             <div className="text-base lg:text-lg underline dark:text-[#E8E8E8] transition-all duration-1000">
               Personal Account Settings
-            </div>
-            <div className="opacity-0 lg:hidden">
-              <MinimalLogo />
             </div>
           </div>
         </Motion>
