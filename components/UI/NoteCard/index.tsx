@@ -15,9 +15,7 @@ const NoteCard: FunctionComponent<INoteCard> = ({ title = "", text = "", date = 
   const router: NextRouter = useRouter();
 
   function redirect() {
-    setTimeout(() => {
-      router.push(`/note/${id}`);
-    }, 610);
+    router.push(`/note/${id}`);
   }
 
   return (

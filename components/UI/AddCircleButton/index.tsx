@@ -6,9 +6,7 @@ const AddCircleButton: FunctionComponent = () => {
   const router: NextRouter = useRouter();
 
   function redirect() {
-    setTimeout(() => {
-      router.push("/add-note");
-    }, 610);
+    router.push("/add-note");
   }
 
   return (

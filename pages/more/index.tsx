@@ -20,9 +20,7 @@ const More: NextPage<IProfilePageProps> = props => {
   }
 
   function back() {
-    setTimeout(() => {
-      router.push("/profile");
-    }, 610);
+    router.push("/profile");
   }
 
   return (

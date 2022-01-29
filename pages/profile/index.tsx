@@ -32,21 +32,15 @@ const Profile: NextPage<IProfilePageProps> = props => {
 
   async function onSave() {
     dispatch(patchUser(email, password, name, lastName));
-    setTimeout(() => {
-      router.push("/");
-    }, 610);
+    router.push("/");
   }
 
   function redirectToMore() {
-    setTimeout(() => {
-      router.push("/more");
-    }, 610);
+    router.push("/more");
   }
 
   function cancel() {
-    setTimeout(() => {
-      router.push("/");
-    }, 610);
+    router.push("/");
   }
 
   return (

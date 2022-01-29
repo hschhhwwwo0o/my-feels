@@ -16,9 +16,7 @@ const Home: NextPage<IHomePageProps> = props => {
   const { notes, user }: IStore = useSelector((store: IStore) => store);
 
   function redirectToAddNote() {
-    setTimeout(() => {
-      router.push(`/add-note`);
-    }, 610);
+    router.push(`/add-note`);
   }
 
   return (
