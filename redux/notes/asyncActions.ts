@@ -33,12 +33,12 @@ export function setNotes(router: NextRouter) {
   };
 }
 
-export function removeNote(id: string) {
-  return async function (dispatch: TypedDispatch) {
+export function removeNote() {
+  return async function (dispatch: TypedDispatch, getState: () => any) {
     try {
       await feathersClient.reAuthenticate();
-      await feathersClient.service("notes").remove(id);
-      dispatch({ type: "REMOVE_NOTE", payload: { _id: id } });
+      await feathersClient.service("notes").remove(getState().notes.currentNote._id);
+      dispatch({ type: "REMOVE_NOTE", payload: { _id: getState().notes.currentNote._id } });
     } catch (error) {
       console.error(error);
     }
