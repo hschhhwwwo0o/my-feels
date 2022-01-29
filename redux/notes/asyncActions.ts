@@ -36,6 +36,7 @@ export function setNotes(router: NextRouter) {
 export function removeNote(id: string) {
   return async function (dispatch: TypedDispatch) {
     try {
+      await feathersClient.reAuthenticate();
       await feathersClient.service("notes").remove(id);
       dispatch({ type: "REMOVE_NOTE", payload: { _id: id } });
     } catch (error) {
@@ -47,6 +48,7 @@ export function removeNote(id: string) {
 export function addNote(title: string, authorID: string, router: NextRouter) {
   return async function (dispatch: TypedDispatch) {
     try {
+      await feathersClient.reAuthenticate();
       const response = await feathersClient.service("notes").create({
         title,
         authorID,
@@ -68,6 +70,7 @@ export function addNote(title: string, authorID: string, router: NextRouter) {
 export function saveNote(title: string, text: string, isPinned: boolean, emojies: string[]) {
   return async function (dispatch: TypedDispatch, getState: () => any) {
     try {
+      await feathersClient.reAuthenticate();
       const response = await feathersClient.service("notes").patch(getState().notes.currentNote._id, {
         title,
         text,
@@ -92,6 +95,7 @@ export function saveNote(title: string, text: string, isPinned: boolean, emojies
 export function pinNote(isPinned: boolean) {
   return async function (dispatch: TypedDispatch, getState: () => any) {
     try {
+      await feathersClient.reAuthenticate();
       const response: any = await feathersClient.service("notes").patch(getState().notes.currentNote._id, {
         isPinned,
       });
