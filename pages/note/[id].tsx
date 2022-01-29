@@ -61,7 +61,7 @@ const Home: NextPage<IHomePageProps> = props => {
               <MinimalLogo />
             </div>
           </Motion>
-          <Motion delay={0.1}>
+          <Motion delay={1}>
             <div onClick={onSave}>
               <Link href="/">
                 <a>
@@ -70,21 +70,21 @@ const Home: NextPage<IHomePageProps> = props => {
               </Link>
             </div>
           </Motion>
-          <Motion delay={0.2}>
+          <Motion delay={2}>
             <Emojies value={emojies} setValue={setEmojies} />
           </Motion>
-          <Motion delay={0.3}>
+          <Motion delay={3}>
             <Thumbtack value={isPinned} onClickHandler={onPin} />
           </Motion>
         </div>
         <div className="lg:px-16">
-          <Motion delay={0.4}>
+          <Motion delay={4}>
             <InputNoteTitleH2 value={title} setValue={setTitle} />
           </Motion>
-          <Motion delay={0.5}>
+          <Motion delay={5}>
             <Textarea value={text} setValue={setText} />
           </Motion>
-          <Motion delay={0.6}>
+          <Motion delay={6}>
             <div className="text-[#C5C5C5] dark:text-[#5B5B5B] fixed bottom-5 flex items-center justify-center w-full left-0 text-sm font-semibold">
               {moment(updatedAt).format("DD/MM/YYYY")}
             </div>

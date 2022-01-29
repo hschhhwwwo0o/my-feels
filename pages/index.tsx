@@ -29,7 +29,7 @@ const Home: NextPage<IHomePageProps> = props => {
             <MinimalLogo />
           </div>
         </Motion>
-        <Motion delay={0.1}>
+        <Motion delay={1}>
           <Link href="/profile">
             <a>
               <div className="text-center text-[#242424] dark:text-[#E8E8E8] pb-14 text-lg">
@@ -39,7 +39,7 @@ const Home: NextPage<IHomePageProps> = props => {
           </Link>
         </Motion>
         {notes.pinnedNotes.length ? (
-          <Motion delay={0.2}>
+          <Motion delay={2}>
             <div className="pb-6 lg:pb-12">
               <div className="text-[#242424] dark:text-[#E8E8E8] text-sm font-medium">Pinned</div>
               <div className="grid grid-cols-2 gap-4 lg:gap-8 mt-3">
@@ -55,7 +55,7 @@ const Home: NextPage<IHomePageProps> = props => {
           ""
         )}
         {notes.notes.length ? (
-          <Motion delay={0.3}>
+          <Motion delay={3}>
             <div className="mt-0">
               <div className="text-[#242424] dark:text-[#E8E8E8] text-sm font-medium">All</div>
               <div className="grid grid-cols-2 gap-3 lg:gap-8 mt-3">
@@ -70,12 +70,12 @@ const Home: NextPage<IHomePageProps> = props => {
         ) : (
           ""
         )}
-        <Motion delay={0.4}>
+        <Motion delay={4}>
           <div className="text-center dark:text-[#E8E8E8]">
             {notes.notes.length === 0 && notes.pinnedNotes.length === 0 ? "You don't have notes yet" : ""}
           </div>
         </Motion>
-        <Motion delay={0.5}>
+        <Motion delay={5}>
           <div className="fixed w-full left-0 px-5 bottom-5 lg:hidden">
             <div className="shadow-2xl">
               <Anchor to="#header" smooth={true} duration={600}>
@@ -84,7 +84,7 @@ const Home: NextPage<IHomePageProps> = props => {
             </div>
           </div>
         </Motion>
-        <Motion delay={0.6}>
+        <Motion delay={6}>
           <div className="flex flex-row justify-end h-28">
             <div className="relative left-10">
               <div className="hidden lg:block fixed bottom-5">

@@ -32,10 +32,10 @@ const CreateNote: NextPage<IHomePageProps> = props => {
           </div>
         </Motion>
         <div className="-mt-36 lg:mt-36">
-          <Motion delay={0.1}>
+          <Motion delay={1}>
             <div className="font-semibold text-base text-[#3b3b3b] dark:text-[#565656]">Add title:</div>
           </Motion>
-          <Motion delay={0.2}>
+          <Motion delay={2}>
             <input
               value={title}
               onChange={e => {
@@ -47,27 +47,27 @@ const CreateNote: NextPage<IHomePageProps> = props => {
             />
           </Motion>
           <div className="mt-20 grid-cols-1 lg:grid-cols-2 gap-2 lg:gap-6 w-full lg:relative -top-5 hidden lg:grid">
-            <Motion delay={0.3}>
+            <Motion delay={3}>
               <Link href="/">
                 <a>
                   <SecondaryButton>Back</SecondaryButton>
                 </a>
               </Link>
             </Motion>
-            <Motion delay={0.4}>
+            <Motion delay={4}>
               <BrandButton onClickHandler={add}>Add note</BrandButton>
             </Motion>
           </div>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 lg:gap-6 w-full lg:relative lg:hidden">
-          <Motion delay={0.5}>
+          <Motion delay={5}>
             <Link href="/">
               <a>
                 <SecondaryButton>Back</SecondaryButton>
               </a>
             </Link>
           </Motion>
-          <Motion delay={0.6}>
+          <Motion delay={6}>
             <BrandButton onClickHandler={add}>Add note</BrandButton>
           </Motion>
         </div>

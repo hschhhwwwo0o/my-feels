@@ -33,12 +33,12 @@ const More: NextPage<IProfilePageProps> = props => {
             <MinimalLogo />
           </div>
         </Motion>
-        <Motion delay={0.1}>
+        <Motion delay={1}>
           <div className="text-[#242424] dark:text-[#E8E8E8] underline">More</div>
         </Motion>
         <div className="mt-12 w-full">
           <div className="w-full">
-            <Motion delay={0.2}>
+            <Motion delay={2}>
               <div className="border-2 border-[#EAEAEA] dark:border-[#2D2D2D] w-full rounded-3xl px-5 pt-6 pb-4 lg:pb-6 shadow-md">
                 <div className="font-semibold text-lg text-[#242424] dark:text-[#ECECEC]">About</div>
                 <div className="text-[#444444] dark:text-[#B2B2B2] mt-[14px] text-sm lg:text-base text-justify">
@@ -50,7 +50,7 @@ const More: NextPage<IProfilePageProps> = props => {
                 </div>
               </div>
             </Motion>
-            <Motion delay={0.3}>
+            <Motion delay={3}>
               <div className="border-2 border-[#EAEAEA] dark:border-[#2D2D2D] w-full rounded-3xl px-5 pt-6 pb-4 lg:pb-6 shadow-md mt-6">
                 <div className="font-semibold text-lg text-[#242424] dark:text-[#ECECEC]">Privacy Policy</div>
                 <div className="text-[#444444] dark:text-[#B2B2B2] mt-[14px] text-sm lg:text-base text-justify">
@@ -63,7 +63,7 @@ const More: NextPage<IProfilePageProps> = props => {
                 </div>
               </div>
             </Motion>
-            <Motion delay={0.4}>
+            <Motion delay={4}>
               <div className="border-2 border-[#EAEAEA] dark:border-[#2D2D2D] w-full rounded-3xl px-5 pt-6 pb-4 lg:pb-6 shadow-md mt-6">
                 <div className="font-semibold text-lg text-[#242424] dark:text-[#ECECEC]">
                   Dear {user.firstName} {user.lastName}
@@ -88,14 +88,14 @@ const More: NextPage<IProfilePageProps> = props => {
               </div>
             </Motion>
             <div className="mt-5 grid grid-cols-2 gap-4 pb-32">
-              <Motion delay={0.5}>
+              <Motion delay={5}>
                 <div className="hidden lg:block">
                   <Anchor to="#header" smooth={true} duration={600}>
                     <SecondaryButton onClickHandler={back}>Back</SecondaryButton>
                   </Anchor>
                 </div>
               </Motion>
-              <Motion delay={0.6}>
+              <Motion delay={6}>
                 <div className="hidden lg:block">
                   <BrandButton onClickHandler={remove}>Remove account</BrandButton>
                 </div>
@@ -103,7 +103,7 @@ const More: NextPage<IProfilePageProps> = props => {
             </div>
           </div>
         </div>
-        <Motion delay={0.6}>
+        <Motion delay={6}>
           <div className="fixed lg:hidden w-full bottom-5 px-5 left-0">
             <Anchor to="#header" smooth={true} duration={600}>
               <SecondaryButton onClickHandler={back}>Back</SecondaryButton>

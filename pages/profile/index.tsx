@@ -57,7 +57,7 @@ const Profile: NextPage<IProfilePageProps> = props => {
             <MinimalLogo />
           </div>
         </Motion>
-        <Motion delay={0.1}>
+        <Motion delay={1}>
           <div className="flex justify-between lg:justify-center w-full pb-9 pt-9 lg:pt-0 lg:pb-12">
             <div className="text-base lg:text-lg underline dark:text-[#E8E8E8] transition-all duration-1000">
               Personal Account Settings
@@ -65,19 +65,19 @@ const Profile: NextPage<IProfilePageProps> = props => {
           </div>
         </Motion>
         <div className="w-full lg:w-96 flex flex-col gap-3">
-          <Motion delay={0.2}>
+          <Motion delay={2}>
             <Input value={name} setValue={setName} placeholder="Enter your name..." />
           </Motion>
-          <Motion delay={0.3}>
+          <Motion delay={3}>
             <Input value={lastName} setValue={setLastName} placeholder="Enter your last name..." />
           </Motion>
-          <Motion delay={0.4}>
+          <Motion delay={4}>
             <Input value={email} setValue={setEmail} placeholder="Enter your email..." />
           </Motion>
-          <Motion delay={0.5}>
+          <Motion delay={5}>
             <Input value={password} setValue={setPassword} placeholder="Enter your new password..." />
           </Motion>
-          <Motion delay={0.6}>
+          <Motion delay={6}>
             <div className="mt-1 lg:pb-0">
               <div className="text-sm dark:text-[#E8E8E8] transition-all duration-500">Theme</div>
               <div className="mt-3">
@@ -88,13 +88,13 @@ const Profile: NextPage<IProfilePageProps> = props => {
           <div className="w-full px-0 pb-14">
             <div className="flex flex-col gap-3">
               <div className="mt-9">
-                <Motion delay={0.7}>
+                <Motion delay={7}>
                   <Anchor to="#header" smooth={true} duration={600}>
                     <BrandButton onClickHandler={onSave}>Save</BrandButton>
                   </Anchor>
                 </Motion>
               </div>
-              <Motion delay={0.8}>
+              <Motion delay={8}>
                 <div className="flex flex-row gap-3">
                   <div className="w-full">
                     <Anchor to="#header" smooth={true} duration={600}>
