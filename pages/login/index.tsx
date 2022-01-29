@@ -55,7 +55,7 @@ const Login: NextPage = props => {
             <Input value={email} setValue={setEmail} placeholder="Enter email..." />
           </Motion>
           <Motion delay={4}>
-            <Input value={password} setValue={setPassword} placeholder="Enter password..." />
+            <Input value={password} setValue={setPassword} type="password" placeholder="Enter password..." />
           </Motion>
           <Motion delay={5}>
             <BrandButton onClickHandler={signIn}>Login</BrandButton>

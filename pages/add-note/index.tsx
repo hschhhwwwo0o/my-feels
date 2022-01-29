@@ -17,10 +17,14 @@ const CreateNote: NextPage<IHomePageProps> = props => {
   const router: NextRouter = useRouter();
   const { user }: IStore = useSelector((store: IStore) => store);
 
+  const [isClicked, setIsClicked] = useState<boolean>(false);
   const [title, setTitle] = useState<string>("");
 
   async function add() {
-    dispatch(addNote(title, user._id, router));
+    if (isClicked === false) {
+      setIsClicked(true);
+      dispatch(addNote(title, user._id, router));
+    }
   }
 
   return (
