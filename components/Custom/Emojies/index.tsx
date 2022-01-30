@@ -16,7 +16,7 @@ const Emojies: FunctionComponent<IEmojies> = ({ value = [], setValue = () => {} 
 
   return (
     <>
-      <div className="flex flex-row gap-3 items-center">
+      <div className="flex flex-row gap-3 items-center relative -top-[1px]">
         <img
           onClick={() => {
             onClickHandler("cry");
