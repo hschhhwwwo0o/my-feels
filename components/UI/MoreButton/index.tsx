@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from "react";
 
 interface IMoreButton {
-  onClickHandler: () => any;
+  onClickHandler?: () => any;
 }
 
 const MoreButton: FunctionComponent<IMoreButton> = ({ onClickHandler = () => {} }) => {

@@ -14,10 +14,6 @@ const Home: NextPage<IHomePageProps> = props => {
   const router: NextRouter = useRouter();
   const { notes, user }: IStore = useSelector((store: IStore) => store);
 
-  function redirectToAddNote() {
-    router.push(`/add-note`);
-  }
-
   return (
     <TheLayout>
       <div className="h-full">
@@ -75,7 +71,9 @@ const Home: NextPage<IHomePageProps> = props => {
         <Motion delay={5}>
           <div className="fixed w-full left-0 px-5 bottom-5 lg:hidden">
             <div className="shadow-2xl">
-              <BrandButton onClickHandler={redirectToAddNote}>Add Note</BrandButton>
+              <Link href="/add-note">
+                <BrandButton>Add Note</BrandButton>
+              </Link>
             </div>
           </div>
         </Motion>

@@ -12,6 +12,7 @@ import MinimalLogo from "components/UI/MinimalLogo";
 import MoreButton from "components/UI/MoreButton";
 import SecondaryButton from "components/UI/SecondaryButton";
 import ThemeSwitch from "components/UI/ThemeSwitch";
+import Link from "next/link";
 
 const Profile: NextPage<IProfilePageProps> = props => {
   const router: NextRouter = useRouter();
@@ -31,14 +32,6 @@ const Profile: NextPage<IProfilePageProps> = props => {
 
   async function onSave() {
     dispatch(patchUser(email, password, name, lastName));
-    router.push("/");
-  }
-
-  function redirectToMore() {
-    router.push("/more");
-  }
-
-  function cancel() {
     router.push("/");
   }
 
@@ -88,9 +81,13 @@ const Profile: NextPage<IProfilePageProps> = props => {
               <Motion delay={8}>
                 <div className="flex flex-row gap-3">
                   <div className="w-full">
-                    <SecondaryButton onClickHandler={cancel}>Cancel</SecondaryButton>
+                    <Link href="/">
+                      <SecondaryButton>Cancel</SecondaryButton>
+                    </Link>
                   </div>
-                  <MoreButton onClickHandler={redirectToMore} />
+                  <Link href="/more">
+                    <MoreButton />
+                  </Link>
                 </div>
               </Motion>
             </div>

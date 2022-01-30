@@ -8,18 +8,16 @@ import Motion from "components/Motion";
 import MinimalLogo from "components/UI/MinimalLogo";
 import SecondaryButton from "components/UI/SecondaryButton";
 import BrandButton from "components/UI/BrandButton";
+import Link from "next/link";
 
 const More: NextPage<IProfilePageProps> = props => {
   const router: NextRouter = useRouter();
   const dispatch: TypedDispatch = useDispatch();
+
   const { user }: IStore = useSelector((store: IStore) => store);
 
   function remove() {
     dispatch(logout(router));
-  }
-
-  function back() {
-    router.push("/profile");
   }
 
   return (
@@ -87,7 +85,9 @@ const More: NextPage<IProfilePageProps> = props => {
             <div className="mt-5 grid grid-cols-2 gap-4">
               <Motion delay={5}>
                 <div className="hidden lg:block">
-                  <SecondaryButton onClickHandler={back}>Back</SecondaryButton>
+                  <Link href="/profile">
+                    <SecondaryButton>Back</SecondaryButton>
+                  </Link>
                 </div>
               </Motion>
               <Motion delay={6}>
@@ -99,7 +99,9 @@ const More: NextPage<IProfilePageProps> = props => {
           </div>
           <Motion delay={6}>
             <div className="lg:hidden w-full">
-              <SecondaryButton onClickHandler={back}>Back</SecondaryButton>
+              <Link href="/profile">
+                <SecondaryButton>Back</SecondaryButton>
+              </Link>
             </div>
           </Motion>
         </div>

@@ -16,9 +16,10 @@ import InputNoteTitleH2 from "components/UI/InputNoteTitleH2";
 import TrashButton from "components/UI/TrashButton";
 
 const Home: NextPage<IHomePageProps> = props => {
-  const { notes }: IStore = useSelector((store: IStore) => store);
   const dispatch: TypedDispatch = useDispatch();
   const router: NextRouter = useRouter();
+
+  const { notes }: IStore = useSelector((store: IStore) => store);
 
   const [title, setTitle] = useState<string>("");
   const [text, setText] = useState<string>("");
