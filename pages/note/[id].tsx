@@ -44,16 +44,16 @@ const Home: NextPage<IHomePageProps> = props => {
     setEmojies(notes.currentNote.emojies);
   }, [notes.currentNote]);
 
-  async function onSave() {
+  async function onSaveHandler() {
     dispatch(saveNote(title, text, isPinned, emojies));
   }
 
-  async function onPin() {
+  async function onPinHandler() {
     dispatch(pinNote(!isPinned));
     setIsPinned(!isPinned);
   }
 
-  async function onRemove() {
+  async function onRemoveHandler() {
     dispatch(removeNote());
     router.push("/");
   }
@@ -66,19 +66,19 @@ const Home: NextPage<IHomePageProps> = props => {
             <div className="relative top-1">
               <Link href="/">
                 <a>
-                  <BackButton onClickHandler={onSave} />
+                  <BackButton onClickHandler={onSaveHandler} />
                 </a>
               </Link>
             </div>
           </Motion>
           <Motion delay={1}>
-            <Thumbtack value={isPinned} onClickHandler={onPin} />
+            <Thumbtack value={isPinned} onClickHandler={onPinHandler} />
           </Motion>
           <Motion delay={2}>
             <Emojies value={emojies} setValue={setEmojies} />
           </Motion>
           <Motion delay={3}>
-            <TrashButton onClickHandler={onRemove} />
+            <TrashButton onClickHandler={onRemoveHandler} />
           </Motion>
         </div>
         <div className="lg:px-16 lg:min-w-[613px]">

@@ -20,7 +20,7 @@ const Login: NextPage = props => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
 
-  async function signIn() {
+  async function onLoginHandler() {
     function _errorCallback() {
       setApiError("Something went wrong. Make sure the data you entered is correct.");
     }
@@ -63,7 +63,7 @@ const Login: NextPage = props => {
             <Input value={password} setValue={setPassword} type="password" placeholder="Enter password..." />
           </Motion>
           <Motion delay={5}>
-            <BrandButton onClickHandler={signIn}>Login</BrandButton>
+            <BrandButton onClickHandler={onLoginHandler}>Login</BrandButton>
           </Motion>
           <Error text={apiError} setError={setApiError} dependencies={[email, password]} />
         </div>

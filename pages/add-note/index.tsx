@@ -15,12 +15,13 @@ import BrandButton from "components/UI/BrandButton";
 const CreateNote: NextPage<IHomePageProps> = props => {
   const dispatch: TypedDispatch = useDispatch();
   const router: NextRouter = useRouter();
+
   const { user }: IStore = useSelector((store: IStore) => store);
 
   const [isClicked, setIsClicked] = useState<boolean>(false);
   const [title, setTitle] = useState<string>("");
 
-  async function add() {
+  async function onAddNoteHandler() {
     if (isClicked === false) {
       setIsClicked(true);
       dispatch(addNote(title, user._id, router));
@@ -59,7 +60,7 @@ const CreateNote: NextPage<IHomePageProps> = props => {
               </Link>
             </Motion>
             <Motion delay={4}>
-              <BrandButton onClickHandler={add}>Add note</BrandButton>
+              <BrandButton onClickHandler={onAddNoteHandler}>Add note</BrandButton>
             </Motion>
           </div>
         </div>
@@ -72,7 +73,7 @@ const CreateNote: NextPage<IHomePageProps> = props => {
             </Link>
           </Motion>
           <Motion delay={6}>
-            <BrandButton onClickHandler={add}>Add note</BrandButton>
+            <BrandButton onClickHandler={onAddNoteHandler}>Add note</BrandButton>
           </Motion>
         </div>
       </div>

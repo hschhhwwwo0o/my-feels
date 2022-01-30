@@ -18,7 +18,7 @@ const More: NextPage<IProfilePageProps> = props => {
 
   const { user }: IStore = useSelector((store: IStore) => store);
 
-  function remove() {
+  function onLogoutHandler() {
     dispatch(logout(router));
   }
 
@@ -61,7 +61,7 @@ const More: NextPage<IProfilePageProps> = props => {
                   myfeels.feedback@gmail.com
                 </div>
                 <div className="lg:hidden mt-4">
-                  <BrandButton onClickHandler={remove}>Remove account</BrandButton>
+                  <BrandButton onClickHandler={onLogoutHandler}>Remove account</BrandButton>
                 </div>
               </div>
             </Motion>
@@ -77,7 +77,7 @@ const More: NextPage<IProfilePageProps> = props => {
               </Motion>
               <Motion delay={6}>
                 <div className="hidden lg:block">
-                  <BrandButton onClickHandler={remove}>Remove account</BrandButton>
+                  <BrandButton onClickHandler={onLogoutHandler}>Remove account</BrandButton>
                 </div>
               </Motion>
             </div>

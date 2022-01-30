@@ -1,5 +1,4 @@
 import type { NextPage } from "next";
-import { NextRouter, useRouter } from "next/router";
 import { IStore } from "redux";
 import { useSelector } from "react-redux";
 import TheLayout from "layouts";
@@ -11,7 +10,6 @@ import BrandButton from "components/UI/BrandButton";
 import AddCircleButton from "components/UI/AddCircleButton";
 
 const Home: NextPage<IHomePageProps> = props => {
-  const router: NextRouter = useRouter();
   const { notes, user }: IStore = useSelector((store: IStore) => store);
 
   return (

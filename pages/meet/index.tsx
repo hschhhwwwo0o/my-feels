@@ -18,7 +18,7 @@ const Meet: NextPage = props => {
   const [name, setName] = useState<string>("");
   const [lastName, setLastName] = useState<string>("");
 
-  async function meet() {
+  async function onMeetUserHandler() {
     dispatch(meetUser(name, lastName));
     router.push("/");
   }
@@ -57,7 +57,7 @@ const Meet: NextPage = props => {
             </div>
           </Motion>
           <Motion delay={6}>
-            <BrandButton onClickHandler={meet}>Continue</BrandButton>
+            <BrandButton onClickHandler={onMeetUserHandler}>Continue</BrandButton>
           </Motion>
         </div>
       </div>

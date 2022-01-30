@@ -7,9 +7,10 @@ import { setNotes } from "redux/notes/asyncActions";
 import { reAuthenticate } from "redux/user/asyncActions";
 
 const ThePreApplicationLayout: FunctionComponent<{ children: ReactNode }> = ({ children }) => {
-  const { user }: IStore = useSelector((store: IStore) => store);
   const dispatch: TypedDispatch = useDispatch();
   const router: NextRouter = useRouter();
+
+  const { user }: IStore = useSelector((store: IStore) => store);
 
   useEffect(() => {
     dispatch(reAuthenticate(router));

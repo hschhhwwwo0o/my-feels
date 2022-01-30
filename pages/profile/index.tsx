@@ -17,6 +17,7 @@ import Link from "next/link";
 const Profile: NextPage<IProfilePageProps> = props => {
   const router: NextRouter = useRouter();
   const dispatch: TypedDispatch = useDispatch();
+
   const { user }: IStore = useSelector((store: IStore) => store);
 
   const [name, setName] = useState<string>("");
@@ -30,7 +31,7 @@ const Profile: NextPage<IProfilePageProps> = props => {
     setEmail(user.email);
   }, [user]);
 
-  async function onSave() {
+  async function onSaveHandler() {
     dispatch(patchUser(email, password, name, lastName));
     router.push("/");
   }
@@ -75,7 +76,7 @@ const Profile: NextPage<IProfilePageProps> = props => {
             <div className="flex flex-col gap-3">
               <div className="mt-9">
                 <Motion delay={7}>
-                  <BrandButton onClickHandler={onSave}>Save</BrandButton>
+                  <BrandButton onClickHandler={onSaveHandler}>Save</BrandButton>
                 </Motion>
               </div>
               <Motion delay={8}>

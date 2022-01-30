@@ -20,7 +20,7 @@ const CreateAnAccount: NextPage = props => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
 
-  async function create() {
+  async function onCreateAnAccountHandler() {
     function _errorCallback() {
       setApiError("Something went wrong. Make sure the data you entered is correct.");
     }
@@ -65,7 +65,7 @@ const CreateAnAccount: NextPage = props => {
             <Input value={password} setValue={setPassword} placeholder="Enter password..." type="password" />
           </Motion>
           <Motion delay={5}>
-            <BrandButton onClickHandler={create}>Create</BrandButton>
+            <BrandButton onClickHandler={onCreateAnAccountHandler}>Create</BrandButton>
           </Motion>
           <Error text={apiError} setError={setApiError} dependencies={[email, password]} />
         </div>
