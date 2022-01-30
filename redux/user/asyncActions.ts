@@ -89,12 +89,13 @@ export function patchUser(email: string, password: string, firstName: string, la
           lastName,
         },
       });
-      await feathersClient.service("users").patch(getState().user._id, {
+      const query: any = {
         email,
-        password,
         firstName,
         lastName,
-      });
+      };
+      password ? (query.password = password) : null;
+      await feathersClient.service("users").patch(getState().user._id, query);
     } catch (error) {
       console.error(error);
     }
