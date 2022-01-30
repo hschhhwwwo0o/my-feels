@@ -5,7 +5,6 @@ import { IStore, TypedDispatch } from "redux";
 import { useDispatch, useSelector } from "react-redux";
 import { patchUser } from "redux/user/asyncActions";
 import TheLayout from "layouts";
-import { Link as Anchor } from "react-scroll";
 import Motion from "components/Motion";
 import BrandButton from "components/UI/BrandButton";
 import Input from "components/UI/Input";
@@ -83,21 +82,15 @@ const Profile: NextPage<IProfilePageProps> = props => {
             <div className="flex flex-col gap-3">
               <div className="mt-9">
                 <Motion delay={7}>
-                  <Anchor to="#header" smooth={true} duration={600}>
-                    <BrandButton onClickHandler={onSave}>Save</BrandButton>
-                  </Anchor>
+                  <BrandButton onClickHandler={onSave}>Save</BrandButton>
                 </Motion>
               </div>
               <Motion delay={8}>
                 <div className="flex flex-row gap-3">
                   <div className="w-full">
-                    <Anchor to="#header" smooth={true} duration={600}>
-                      <SecondaryButton onClickHandler={cancel}>Cancel</SecondaryButton>
-                    </Anchor>
+                    <SecondaryButton onClickHandler={cancel}>Cancel</SecondaryButton>
                   </div>
-                  <Anchor to="#header" smooth={true} duration={600}>
-                    <MoreButton onClickHandler={redirectToMore} />
-                  </Anchor>
+                  <MoreButton onClickHandler={redirectToMore} />
                 </div>
               </Motion>
             </div>

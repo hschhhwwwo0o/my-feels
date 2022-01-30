@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { logout } from "redux/user/asyncActions";
 import { NextRouter, useRouter } from "next/router";
 import TheLayout from "layouts";
-import { Link as Anchor } from "react-scroll";
 import Motion from "components/Motion";
 import MinimalLogo from "components/UI/MinimalLogo";
 import SecondaryButton from "components/UI/SecondaryButton";
@@ -25,7 +24,7 @@ const More: NextPage<IProfilePageProps> = props => {
 
   return (
     <TheLayout>
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center w-full">
         <Motion delay={0}>
           <div className="py-12">
             <MinimalLogo />
@@ -34,7 +33,7 @@ const More: NextPage<IProfilePageProps> = props => {
         <Motion delay={1}>
           <div className="text-[#242424] dark:text-[#E8E8E8] underline">More</div>
         </Motion>
-        <div className="mt-12 w-full">
+        <div className="mt-12 w-full pb-20">
           <div className="w-full">
             <Motion delay={2}>
               <div className="border-2 border-[#EAEAEA] dark:border-[#2D2D2D] w-full rounded-3xl px-5 pt-6 pb-4 lg:pb-6 shadow-md">
@@ -85,12 +84,10 @@ const More: NextPage<IProfilePageProps> = props => {
                 </div>
               </div>
             </Motion>
-            <div className="mt-5 grid grid-cols-2 gap-4 pb-32">
+            <div className="mt-5 grid grid-cols-2 gap-4">
               <Motion delay={5}>
                 <div className="hidden lg:block">
-                  <Anchor to="#header" smooth={true} duration={600}>
-                    <SecondaryButton onClickHandler={back}>Back</SecondaryButton>
-                  </Anchor>
+                  <SecondaryButton onClickHandler={back}>Back</SecondaryButton>
                 </div>
               </Motion>
               <Motion delay={6}>
@@ -100,14 +97,12 @@ const More: NextPage<IProfilePageProps> = props => {
               </Motion>
             </div>
           </div>
-        </div>
-        <Motion delay={6}>
-          <div className="fixed lg:hidden w-full bottom-5 px-5 left-0">
-            <Anchor to="#header" smooth={true} duration={600}>
+          <Motion delay={6}>
+            <div className="lg:hidden w-full">
               <SecondaryButton onClickHandler={back}>Back</SecondaryButton>
-            </Anchor>
-          </div>
-        </Motion>
+            </div>
+          </Motion>
+        </div>
       </div>
     </TheLayout>
   );

@@ -17,12 +17,12 @@ import ThePreApplicationLayout from "layouts/pre-app-layout";
  */
 import { AnimatePresence } from "framer-motion";
 
-function MyApp({ Component, pageProps, router }: AppProps) {
+function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Provider store={store}>
       <ThePreApplicationLayout>
-        <AnimatePresence exitBeforeEnter>
-          <Component {...pageProps} key={router.route} />
+        <AnimatePresence>
+          <Component {...pageProps} />
         </AnimatePresence>
       </ThePreApplicationLayout>
     </Provider>

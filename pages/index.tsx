@@ -4,7 +4,6 @@ import { IStore } from "redux";
 import { useSelector } from "react-redux";
 import TheLayout from "layouts";
 import Motion from "components/Motion";
-import { Link as Anchor } from "react-scroll";
 import Link from "next/link";
 import MinimalLogo from "components/UI/MinimalLogo";
 import NoteCard from "components/UI/NoteCard";
@@ -76,9 +75,7 @@ const Home: NextPage<IHomePageProps> = props => {
         <Motion delay={5}>
           <div className="fixed w-full left-0 px-5 bottom-5 lg:hidden">
             <div className="shadow-2xl">
-              <Anchor to="#header" smooth={true} duration={600}>
-                <BrandButton onClickHandler={redirectToAddNote}>Add Note</BrandButton>
-              </Anchor>
+              <BrandButton onClickHandler={redirectToAddNote}>Add Note</BrandButton>
             </div>
           </div>
         </Motion>

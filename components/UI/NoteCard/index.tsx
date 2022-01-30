@@ -1,8 +1,8 @@
 import React, { FunctionComponent } from "react";
 import moment from "moment";
-import { Link as Anchor } from "react-scroll";
 import { NextRouter, useRouter } from "next/router";
 import MotionOnView from "components/MotionOnView";
+import Link from "next/link";
 
 interface INoteCard {
   title?: string;
@@ -12,16 +12,10 @@ interface INoteCard {
 }
 
 const NoteCard: FunctionComponent<INoteCard> = ({ title = "", text = "", date = "", id = "1" }) => {
-  const router: NextRouter = useRouter();
-
-  function redirect() {
-    router.push(`/note/${id}`);
-  }
-
   return (
     <MotionOnView>
-      <Anchor to="#header" smooth={true} duration={600}>
-        <div onClick={redirect} className="cursor-pointer">
+      <Link href={`/note/${id}`}>
+        <div className="cursor-pointer">
           <div className="border-2 border-[#EAEAEA] hover:border-[#d6d6d6] dark:border-[#2D2D2D] dark:hover:border-[#5f5f5f] w-full max-w-[164px] lg:max-w-[272px] h-[164px] lg:h-[272px] rounded-[21px] shadow-md hover:shadow-xl px-4 lg:px-6 py-4 lg:py-5 transition-all duration-1000">
             <div>
               <h2 className="font-medium text-sm lg:text-lg text-ellipsis overflow-hidden whitespace-nowrap text-[#242424] dark:text-[#D8D8D8] transition-all duration-1000">
@@ -40,7 +34,7 @@ const NoteCard: FunctionComponent<INoteCard> = ({ title = "", text = "", date = 
             </div>
           </div>
         </div>
-      </Anchor>
+      </Link>
     </MotionOnView>
   );
 };
