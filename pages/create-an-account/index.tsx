@@ -10,16 +10,21 @@ import Motion from "components/Motion";
 import BrandButton from "components/UI/BrandButton";
 import Input from "components/UI/Input";
 import Logo from "components/UI/Logo";
+import Error from "components/UI/Error";
 
 const CreateAnAccount: NextPage = props => {
   const dispatch: TypedDispatch = useDispatch();
   const router: NextRouter = useRouter();
 
+  const [apiError, setApiError] = useState("");
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
 
   async function create() {
-    dispatch(createAnAccount(email, password, router));
+    function _errorCallback() {
+      setApiError("Something went wrong. Make sure the data you entered is correct.");
+    }
+    dispatch(createAnAccount(email, password, router, _errorCallback));
   }
 
   return (
@@ -62,6 +67,7 @@ const CreateAnAccount: NextPage = props => {
           <Motion delay={5}>
             <BrandButton onClickHandler={create}>Create</BrandButton>
           </Motion>
+          <Error text={apiError} setError={setApiError} dependencies={[email, password]} />
         </div>
       </div>
     </TheLayout>

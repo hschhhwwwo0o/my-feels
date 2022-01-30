@@ -2,7 +2,7 @@ import { NextRouter } from "next/router";
 import { TypedDispatch, TypedState } from "redux";
 import feathersClient from "utils/feathers";
 
-export function createAnAccount(email: string, password: string, router: NextRouter) {
+export function createAnAccount(email: string, password: string, router: NextRouter, _errorCallback: () => any) {
   return async function (dispatch: TypedDispatch) {
     try {
       await feathersClient.service("users").create({
@@ -17,6 +17,7 @@ export function createAnAccount(email: string, password: string, router: NextRou
       dispatch({ type: "SET_USER", payload: user });
       router.push("/meet");
     } catch (error) {
+      _errorCallback();
       console.error(error);
     }
   };
@@ -46,7 +47,7 @@ export function logout(router: NextRouter) {
   };
 }
 
-export function login(email: string, password: string, router: NextRouter) {
+export function login(email: string, password: string, router: NextRouter, _errorCallback: () => any) {
   return async function (dispatch: TypedDispatch) {
     try {
       const { user } = await feathersClient.authenticate({
@@ -57,6 +58,7 @@ export function login(email: string, password: string, router: NextRouter) {
       dispatch({ type: "SET_USER", payload: user });
       router.push("/");
     } catch (error) {
+      _errorCallback();
       console.error(error);
     }
   };

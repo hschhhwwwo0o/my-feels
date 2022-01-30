@@ -10,16 +10,21 @@ import Link from "next/link";
 import BrandButton from "components/UI/BrandButton";
 import Input from "components/UI/Input";
 import Logo from "components/UI/Logo";
+import Error from "components/UI/Error";
 
 const Login: NextPage = props => {
   const dispatch: TypedDispatch = useDispatch();
   const router: NextRouter = useRouter();
 
+  const [apiError, setApiError] = useState("");
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
 
   async function signIn() {
-    dispatch(login(email, password, router));
+    function _errorCallback() {
+      setApiError("Something went wrong. Make sure the data you entered is correct.");
+    }
+    dispatch(login(email, password, router, _errorCallback));
   }
 
   return (
@@ -60,6 +65,7 @@ const Login: NextPage = props => {
           <Motion delay={5}>
             <BrandButton onClickHandler={signIn}>Login</BrandButton>
           </Motion>
+          <Error text={apiError} setError={setApiError} dependencies={[email, password]} />
         </div>
       </div>
     </TheLayout>
