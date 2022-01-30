@@ -82,11 +82,15 @@ const Profile: NextPage<IProfilePageProps> = props => {
                 <div className="flex flex-row gap-3">
                   <div className="w-full">
                     <Link href="/">
-                      <SecondaryButton>Cancel</SecondaryButton>
+                      <a>
+                        <SecondaryButton>Cancel</SecondaryButton>
+                      </a>
                     </Link>
                   </div>
                   <Link href="/more">
-                    <MoreButton />
+                    <a>
+                      <MoreButton />
+                    </a>
                   </Link>
                 </div>
               </Motion>

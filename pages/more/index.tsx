@@ -86,7 +86,9 @@ const More: NextPage<IProfilePageProps> = props => {
               <Motion delay={5}>
                 <div className="hidden lg:block">
                   <Link href="/profile">
-                    <SecondaryButton>Back</SecondaryButton>
+                    <a>
+                      <SecondaryButton>Back</SecondaryButton>
+                    </a>
                   </Link>
                 </div>
               </Motion>
@@ -100,7 +102,9 @@ const More: NextPage<IProfilePageProps> = props => {
           <Motion delay={6}>
             <div className="lg:hidden w-full">
               <Link href="/profile">
-                <SecondaryButton>Back</SecondaryButton>
+                <a>
+                  <SecondaryButton>Back</SecondaryButton>
+                </a>
               </Link>
             </div>
           </Motion>

@@ -72,7 +72,9 @@ const Home: NextPage<IHomePageProps> = props => {
           <div className="fixed w-full left-0 px-5 bottom-5 lg:hidden">
             <div className="shadow-2xl">
               <Link href="/add-note">
-                <BrandButton>Add Note</BrandButton>
+                <a>
+                  <BrandButton>Add Note</BrandButton>
+                </a>
               </Link>
             </div>
           </div>
