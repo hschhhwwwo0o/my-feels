@@ -1,6 +1,5 @@
 import React, { FunctionComponent } from "react";
 import moment from "moment";
-import { NextRouter, useRouter } from "next/router";
 import MotionOnView from "components/MotionOnView";
 import Link from "next/link";
 

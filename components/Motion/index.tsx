@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
 import React, { FunctionComponent } from "react";
+import { motion } from "framer-motion";
 import { MotionConfig } from "motion.config";
 
 interface IMotion {

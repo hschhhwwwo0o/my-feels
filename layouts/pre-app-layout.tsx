@@ -1,5 +1,5 @@
-import { NextRouter, useRouter } from "next/router";
 import React, { FunctionComponent, ReactNode, useEffect } from "react";
+import { NextRouter, useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
 import { IStore } from "redux";
 import { TypedDispatch } from "redux";
