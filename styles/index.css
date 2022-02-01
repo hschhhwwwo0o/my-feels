@@ -22,3 +22,7 @@ body::scrollbar {
 body {
   background-color: #151515;
 }
+
+*::selection {
+  background: rgb(209, 209, 209);
+}

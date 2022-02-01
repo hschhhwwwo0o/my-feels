@@ -89,7 +89,7 @@ const Home: NextPage<IHomePageProps> = props => {
             <Textarea value={text} setValue={setText} />
           </Motion>
           <Motion delay={6}>
-            <div className="text-[#C5C5C5] dark:text-[#5B5B5B] fixed bottom-5 flex items-center justify-center w-full left-0 text-sm font-semibold">
+            <div className="text-[#C5C5C5] dark:text-[#5B5B5B] fixed bottom-5 flex items-center justify-center w-full left-0 text-[12px] font-semibold">
               {moment(updatedAt).format("DD/MM/YYYY")}
             </div>
           </Motion>
