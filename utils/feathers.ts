@@ -12,6 +12,10 @@ const socket: SocketIOClient.Socket = io("https://my-feels-api.herokuapp.com/");
 const feathersClient: Application<IFeathersClient> = feathers();
 
 feathersClient.configure(auth());
-feathersClient.configure(socketio(socket));
+feathersClient.configure(
+  socketio(socket, {
+    timeout: 10000,
+  })
+);
 
 export default feathersClient;
