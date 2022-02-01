@@ -8,7 +8,7 @@ const ThemeSwitch: FunctionComponent = () => {
   const { user }: IStore = useSelector((store: IStore) => store);
   const dispatch: TypedDispatch = useDispatch();
 
-  async function onClickHandler() {
+  async function onClickHandler(): Promise<void> {
     dispatch(changeTheme(user.theme === "dark" ? "light" : "dark"));
   }
 
