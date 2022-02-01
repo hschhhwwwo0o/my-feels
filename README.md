@@ -1,4 +1,4 @@
-<img src="./md/framee.png" />
+<img src="./md/Frame.png" />
 
 ## My Feels Web Application
 
