@@ -14,6 +14,7 @@ your feeling will always be fine, we believe in it.
 - **[FeathersClient]** - Client to work with the API
 - **[ReactJS]** - A JavaScript library for building user interfaces
 - **[Redux/React-Redux]** - A Predictable State Container for JS Apps
+- **[TailwindCSS]** - A utility-first CSS framework
 - **[Figma]** - Interface development
 
 ## Design
@@ -23,6 +24,7 @@ The design is all done by me. Icons to take from [Flaticon]
 Design instruments: [Figma]
 
 [nodejs]: https://nodejs.org/en/
+[tailwindcss]: https://tailwindcss.com/
 [feathersclient]: https://docs.feathersjs.com/api/client.html#node
 [reactjs]: https://reactjs.org/
 [electronjs]: https://www.electronjs.org/
