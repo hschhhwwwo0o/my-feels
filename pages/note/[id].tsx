@@ -44,16 +44,16 @@ const Home: NextPage<IHomePageProps> = props => {
     setEmojies(notes.currentNote.emojies);
   }, [notes.currentNote]);
 
-  async function onSaveHandler() {
+  async function onSaveHandler(): Promise<void> {
     dispatch(saveNote(title, text, isPinned, emojies));
   }
 
-  async function onPinHandler() {
+  async function onPinHandler(): Promise<void> {
     dispatch(pinNote(!isPinned));
     setIsPinned(!isPinned);
   }
 
-  async function onRemoveHandler() {
+  async function onRemoveHandler(): Promise<void> {
     dispatch(removeNote());
     router.push("/");
   }

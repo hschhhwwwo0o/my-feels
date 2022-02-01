@@ -21,7 +21,7 @@ const CreateNote: NextPage<IHomePageProps> = props => {
   const [isClicked, setIsClicked] = useState<boolean>(false);
   const [title, setTitle] = useState<string>("");
 
-  async function onAddNoteHandler() {
+  async function onAddNoteHandler(): Promise<void> {
     if (isClicked === false) {
       setIsClicked(true);
       dispatch(addNote(title, user._id, router));

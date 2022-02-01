@@ -16,11 +16,11 @@ const Login: NextPage = props => {
   const dispatch: TypedDispatch = useDispatch();
   const router: NextRouter = useRouter();
 
-  const [apiError, setApiError] = useState("");
+  const [apiError, setApiError] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
 
-  async function onLoginHandler() {
+  async function onLoginHandler(): Promise<void> {
     function _errorCallback() {
       setApiError("Something went wrong. Make sure the data you entered is correct.");
     }

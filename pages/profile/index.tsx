@@ -31,7 +31,7 @@ const Profile: NextPage<IProfilePageProps> = props => {
     setEmail(user.email);
   }, [user]);
 
-  async function onSaveHandler() {
+  async function onSaveHandler(): Promise<void> {
     dispatch(patchUser(email, password, name, lastName));
     router.push("/");
   }

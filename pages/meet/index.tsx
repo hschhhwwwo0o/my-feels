@@ -18,7 +18,7 @@ const Meet: NextPage = props => {
   const [name, setName] = useState<string>("");
   const [lastName, setLastName] = useState<string>("");
 
-  async function onMeetUserHandler() {
+  async function onMeetUserHandler(): Promise<void> {
     dispatch(meetUser(name, lastName));
     router.push("/");
   }

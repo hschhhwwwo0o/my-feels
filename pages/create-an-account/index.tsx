@@ -16,11 +16,11 @@ const CreateAnAccount: NextPage = props => {
   const dispatch: TypedDispatch = useDispatch();
   const router: NextRouter = useRouter();
 
-  const [apiError, setApiError] = useState("");
+  const [apiError, setApiError] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
 
-  async function onCreateAnAccountHandler() {
+  async function onCreateAnAccountHandler(): Promise<void> {
     function _errorCallback() {
       setApiError("Something went wrong. Make sure the data you entered is correct.");
     }

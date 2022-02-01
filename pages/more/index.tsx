@@ -18,7 +18,7 @@ const More: NextPage<IProfilePageProps> = props => {
 
   const { user }: IStore = useSelector((store: IStore) => store);
 
-  function onLogoutHandler() {
+  function onLogoutHandler(): void {
     dispatch(logout(router));
   }
 
