@@ -33,8 +33,10 @@ const ThePreApplicationLayout: FunctionComponent<{ children: ReactNode }> = ({ c
 
   return (
     <div className={user.theme}>
-      <div className="bg-[#FAFAFA] min-h-screen dark:bg-[#151515] transition-all duration-1000">
-        <div>{children}</div>
+      <div className={`${isLoading ? "opacity-0" : "opacity-100"} transition-all duration-1000`}>
+        <div className="bg-[#FAFAFA] min-h-screen dark:bg-[#151515] transition-all duration-1000">
+          <div>{children}</div>
+        </div>
       </div>
       {<LoadingModal isLoading={isLoading} />}
     </div>
