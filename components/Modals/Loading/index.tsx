@@ -1,5 +1,5 @@
 import Logo from "components/UI/Logo";
-import React, { FunctionComponent, useEffect, useState } from "react";
+import React, { FunctionComponent } from "react";
 
 const LoadingModal: FunctionComponent<{ isLoading: boolean }> = props => {
   return (
