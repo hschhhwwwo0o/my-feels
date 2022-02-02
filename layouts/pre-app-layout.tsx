@@ -1,10 +1,11 @@
-import React, { FunctionComponent, ReactNode, useEffect } from "react";
+import React, { FunctionComponent, ReactNode, useEffect, useState } from "react";
 import { NextRouter, useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
 import { IStore } from "redux";
 import { TypedDispatch } from "redux";
 import { setNotes } from "redux/notes/asyncActions";
 import { reAuthenticate } from "redux/user/asyncActions";
+import LoadingModal from "components/Modals/Loading";
 
 const ThePreApplicationLayout: FunctionComponent<{ children: ReactNode }> = ({ children }) => {
   const dispatch: TypedDispatch = useDispatch();
@@ -12,8 +13,16 @@ const ThePreApplicationLayout: FunctionComponent<{ children: ReactNode }> = ({ c
 
   const { user }: IStore = useSelector((store: IStore) => store);
 
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+
   useEffect(() => {
-    dispatch(reAuthenticate(router));
+    dispatch(
+      reAuthenticate(router, () => {
+        setTimeout(() => {
+          setIsLoading(false);
+        }, 2000);
+      })
+    );
   }, []);
 
   useEffect(() => {
@@ -27,6 +36,7 @@ const ThePreApplicationLayout: FunctionComponent<{ children: ReactNode }> = ({ c
       <div className="bg-[#FAFAFA] min-h-screen dark:bg-[#151515] transition-all duration-1000">
         <div>{children}</div>
       </div>
+      {<LoadingModal isLoading={isLoading} />}
     </div>
   );
 };

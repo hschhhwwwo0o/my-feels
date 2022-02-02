@@ -23,14 +23,16 @@ export function createAnAccount(email: string, password: string, router: NextRou
   };
 }
 
-export function reAuthenticate(router: NextRouter) {
+export function reAuthenticate(router: NextRouter, _callback: () => void) {
   return async function (dispatch: TypedDispatch) {
     try {
       const { user } = await feathersClient.reAuthenticate();
       dispatch({ type: "SET_USER", payload: user });
+      _callback();
     } catch (error) {
       console.error(error);
       router.push("/create-an-account");
+      _callback();
     }
   };
 }
