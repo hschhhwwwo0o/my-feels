@@ -17,24 +17,22 @@ const Emojies: FunctionComponent<IEmojies> = ({ value = [], setValue = () => {} 
   const emojiesArray = [{ name: "cry" }, { name: "love" }, { name: "smile" }, { name: "sparkles" }];
 
   return (
-    <>
-      <div className="flex flex-row gap-3 items-center relative -top-[1px]">
-        {emojiesArray.map(emoji => {
-          return (
-            <img
-              onClick={() => {
-                onClickHandler(emoji.name);
-              }}
-              src={`/emoji/${emoji.name}.png`}
-              alt={emoji.name}
-              className={`w-[22px] h-[22px] cursor-pointer transition-all duration-300 filter ${
-                value.includes(emoji.name) ? "" : "grayscale"
-              }`}
-            />
-          );
-        })}
-      </div>
-    </>
+    <div className="flex flex-row gap-3 items-center relative -top-[1px]">
+      {emojiesArray.map(emoji => {
+        return (
+          <img
+            onClick={() => {
+              onClickHandler(emoji.name);
+            }}
+            src={`/emoji/${emoji.name}.png`}
+            alt={emoji.name}
+            className={`w-[22px] h-[22px] cursor-pointer transition-all duration-300 filter ${
+              value.includes(emoji.name) ? "" : "grayscale"
+            }`}
+          />
+        );
+      })}
+    </div>
   );
 };
 

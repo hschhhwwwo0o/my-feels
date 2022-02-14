@@ -10,13 +10,13 @@ const LoadingModal: FunctionComponent<{ isLoading: boolean }> = props => {
         }`}
       >
         <div className="h-full flex flex-col items-center justify-between">
-          <div></div>
+          <div />
           <div className={`-mt-7 ${!props.isLoading && "opacity-0"} transition-opacity duration-1000`}>
             <div className="animate-pulse">
               <Logo />
             </div>
           </div>
-          <div></div>
+          <div />
         </div>
       </div>
     </>
