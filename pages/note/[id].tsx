@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { NextRouter, useRouter } from "next/router";
 import { pinNote, removeNote, saveNote } from "redux/notes/asyncActions";
-import moment from "moment";
 import TheLayout from "layouts";
 import Link from "next/link";
 import Motion from "components/Motion";
@@ -14,6 +13,7 @@ import Thumbtack from "components/UI/Thumbtack";
 import Textarea from "components/UI/Textarea";
 import InputNoteTitleH2 from "components/UI/InputNoteTitleH2";
 import TrashButton from "components/UI/TrashButton";
+import NoteDate from "components/Custom/NoteDate";
 
 const Home: NextPage<IHomePageProps> = props => {
   const dispatch: TypedDispatch = useDispatch();
@@ -89,9 +89,7 @@ const Home: NextPage<IHomePageProps> = props => {
             <Textarea value={text} setValue={setText} />
           </Motion>
           <Motion delay={6}>
-            <div className="text-[#C5C5C5] dark:text-[#5B5B5B] fixed bottom-5 flex items-center justify-center w-full left-0 text-[12px] font-semibold">
-              {moment(updatedAt).format("DD/MM/YYYY")}
-            </div>
+            <NoteDate date={updatedAt} />
           </Motion>
         </div>
       </div>
