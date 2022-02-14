@@ -11,6 +11,7 @@ import BrandButton from "components/UI/BrandButton";
 import Input from "components/UI/Input";
 import Logo from "components/UI/Logo";
 import Error from "components/UI/Error";
+import Validate from "components/UI/Validate";
 
 const CreateAnAccount: NextPage = props => {
   const dispatch: TypedDispatch = useDispatch();
@@ -25,6 +26,24 @@ const CreateAnAccount: NextPage = props => {
       setApiError("Something went wrong. Make sure the data you entered is correct.");
     }
     dispatch(createAnAccount(email, password, router, _errorCallback));
+  }
+
+  function validateData() {
+    function _validatePassword() {
+      if (password.length > 4) {
+        return true;
+      }
+    }
+    function _validateEmail() {
+      return email.match(
+        /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      );
+    }
+
+    if (_validatePassword() && _validateEmail()) {
+      return true;
+    }
+    return false;
   }
 
   return (
@@ -65,7 +84,9 @@ const CreateAnAccount: NextPage = props => {
             <Input value={password} setValue={setPassword} placeholder="Enter password..." type="password" />
           </Motion>
           <Motion delay={5}>
-            <BrandButton onClickHandler={onCreateAnAccountHandler}>Create</BrandButton>
+            <Validate isValidate={validateData()}>
+              <BrandButton onClickHandler={onCreateAnAccountHandler}>Create</BrandButton>
+            </Validate>
           </Motion>
           <Error text={apiError} setError={setApiError} dependencies={[email, password]} />
         </div>

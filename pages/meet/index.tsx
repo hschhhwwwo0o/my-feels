@@ -10,6 +10,7 @@ import BrandButton from "components/UI/BrandButton";
 import Input from "components/UI/Input";
 import Logo from "components/UI/Logo";
 import ThemeSwitch from "components/UI/ThemeSwitch";
+import Validate from "components/UI/Validate";
 
 const Meet: NextPage = props => {
   const dispatch: TypedDispatch = useDispatch();
@@ -21,6 +22,13 @@ const Meet: NextPage = props => {
   async function onMeetUserHandler(): Promise<void> {
     dispatch(meetUser(name, lastName));
     router.push("/");
+  }
+
+  function validateName() {
+    if (name.length && lastName.length) {
+      return true;
+    }
+    return false;
   }
 
   return (
@@ -57,7 +65,9 @@ const Meet: NextPage = props => {
             </div>
           </Motion>
           <Motion delay={6}>
-            <BrandButton onClickHandler={onMeetUserHandler}>Continue</BrandButton>
+            <Validate isValidate={validateName()}>
+              <BrandButton onClickHandler={onMeetUserHandler}>Continue</BrandButton>
+            </Validate>
           </Motion>
         </div>
       </div>
