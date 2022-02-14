@@ -15,7 +15,7 @@ import InputNoteTitleH2 from "components/UI/InputNoteTitleH2";
 import TrashButton from "components/UI/TrashButton";
 import NoteDate from "components/Custom/NoteDate";
 
-const Home: NextPage<IHomePageProps> = props => {
+const Home: NextPage = props => {
   const dispatch: TypedDispatch = useDispatch();
   const router: NextRouter = useRouter();
 
