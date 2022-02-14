@@ -11,6 +11,7 @@ import Motion from "components/Motion";
 import MinimalLogo from "components/UI/MinimalLogo";
 import SecondaryButton from "components/UI/SecondaryButton";
 import BrandButton from "components/UI/BrandButton";
+import Validate from "components/UI/Validate";
 
 const CreateNote: NextPage<IHomePageProps> = props => {
   const dispatch: TypedDispatch = useDispatch();
@@ -26,6 +27,13 @@ const CreateNote: NextPage<IHomePageProps> = props => {
       setIsClicked(true);
       dispatch(addNote(title, user._id, router));
     }
+  }
+
+  function validateTitle() {
+    if (title.length) {
+      return true;
+    }
+    return false;
   }
 
   return (
@@ -60,7 +68,9 @@ const CreateNote: NextPage<IHomePageProps> = props => {
               </Link>
             </Motion>
             <Motion delay={4}>
-              <BrandButton onClickHandler={onAddNoteHandler}>Add note</BrandButton>
+              <Validate isValidate={validateTitle()}>
+                <BrandButton onClickHandler={onAddNoteHandler}>Add note</BrandButton>
+              </Validate>
             </Motion>
           </div>
         </div>
