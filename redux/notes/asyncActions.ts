@@ -1,8 +1,8 @@
 import { NextRouter } from "next/router";
-import { TypedDispatch } from "redux";
+import { IPromisedThunk, TypedDispatch } from "redux";
 import feathersClient from "utils/feathers";
 
-export function setNotes(router: NextRouter) {
+export function setNotes(router: NextRouter): IPromisedThunk {
   return async function (dispatch: TypedDispatch) {
     try {
       const response = await feathersClient.service("notes").find({
@@ -33,7 +33,7 @@ export function setNotes(router: NextRouter) {
   };
 }
 
-export function removeNote() {
+export function removeNote(): IPromisedThunk {
   return async function (dispatch: TypedDispatch, getState: () => any) {
     try {
       await feathersClient.reAuthenticate();
@@ -45,7 +45,7 @@ export function removeNote() {
   };
 }
 
-export function addNote(title: string, authorID: string, router: NextRouter) {
+export function addNote(title: string, authorID: string, router: NextRouter): IPromisedThunk {
   return async function (dispatch: TypedDispatch) {
     try {
       await feathersClient.reAuthenticate();
@@ -67,7 +67,7 @@ export function addNote(title: string, authorID: string, router: NextRouter) {
   };
 }
 
-export function saveNote(title: string, text: string, isPinned: boolean, emojies: string[]) {
+export function saveNote(title: string, text: string, isPinned: boolean, emojies: string[]): IPromisedThunk {
   return async function (dispatch: TypedDispatch, getState: () => any) {
     try {
       await feathersClient.reAuthenticate();
@@ -92,7 +92,7 @@ export function saveNote(title: string, text: string, isPinned: boolean, emojies
   };
 }
 
-export function pinNote(isPinned: boolean) {
+export function pinNote(isPinned: boolean): IPromisedThunk {
   return async function (dispatch: TypedDispatch, getState: () => any) {
     try {
       await feathersClient.reAuthenticate();

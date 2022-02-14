@@ -1,8 +1,13 @@
 import { NextRouter } from "next/router";
-import { TypedDispatch, TypedState } from "redux";
+import { IPromisedThunk, TypedDispatch, TypedState } from "redux";
 import feathersClient from "utils/feathers";
 
-export function createAnAccount(email: string, password: string, router: NextRouter, _errorCallback: () => any) {
+export function createAnAccount(
+  email: string,
+  password: string,
+  router: NextRouter,
+  _errorCallback: () => any
+): IPromisedThunk {
   return async function (dispatch: TypedDispatch) {
     try {
       await feathersClient.service("users").create({
@@ -23,7 +28,7 @@ export function createAnAccount(email: string, password: string, router: NextRou
   };
 }
 
-export function reAuthenticate(router: NextRouter, _callback: () => void) {
+export function reAuthenticate(router: NextRouter, _callback: () => void): IPromisedThunk {
   return async function (dispatch: TypedDispatch) {
     try {
       const { user } = await feathersClient.reAuthenticate();
@@ -37,7 +42,7 @@ export function reAuthenticate(router: NextRouter, _callback: () => void) {
   };
 }
 
-export function logout(router: NextRouter) {
+export function logout(router: NextRouter): IPromisedThunk {
   return async function (dispatch: TypedDispatch) {
     try {
       await feathersClient.logout();
@@ -49,7 +54,7 @@ export function logout(router: NextRouter) {
   };
 }
 
-export function login(email: string, password: string, router: NextRouter, _errorCallback: () => any) {
+export function login(email: string, password: string, router: NextRouter, _errorCallback: () => any): IPromisedThunk {
   return async function (dispatch: TypedDispatch) {
     try {
       const { user } = await feathersClient.authenticate({
@@ -66,7 +71,7 @@ export function login(email: string, password: string, router: NextRouter, _erro
   };
 }
 
-export function changeTheme(theme: "dark" | "light") {
+export function changeTheme(theme: "dark" | "light"): IPromisedThunk {
   return async function (dispatch: TypedDispatch, getState: () => TypedState) {
     try {
       dispatch({ type: "CHANGE_USER_THEME", payload: theme });
@@ -79,7 +84,7 @@ export function changeTheme(theme: "dark" | "light") {
   };
 }
 
-export function patchUser(email: string, password: string, firstName: string, lastName: string) {
+export function patchUser(email: string, password: string, firstName: string, lastName: string): IPromisedThunk {
   return async function (dispatch: TypedDispatch, getState: () => TypedState) {
     try {
       dispatch({
@@ -104,7 +109,7 @@ export function patchUser(email: string, password: string, firstName: string, la
   };
 }
 
-export function meetUser(firstName: string, lastName: string) {
+export function meetUser(firstName: string, lastName: string): IPromisedThunk {
   return async function (dispatch: TypedDispatch, getState: () => TypedState) {
     try {
       dispatch({
@@ -124,7 +129,7 @@ export function meetUser(firstName: string, lastName: string) {
   };
 }
 
-export function removeUser() {
+export function removeUser(): IPromisedThunk {
   return async function (dispatch: TypedDispatch, getState: () => TypedState) {
     try {
       dispatch({

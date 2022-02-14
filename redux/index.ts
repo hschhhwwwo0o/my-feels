@@ -20,6 +20,7 @@ const store: IStoreReducer = configureStore({
   },
 });
 
+export type IPromisedThunk = (dispatch?: TypedDispatch, getState?: any) => Promise<void>;
 export type TypedState = any;
 export type TypedDispatch = typeof store.dispatch;
 
