@@ -13,7 +13,7 @@ import SecondaryButton from "components/UI/SecondaryButton";
 import BrandButton from "components/UI/BrandButton";
 import Validate from "components/UI/Validate";
 
-const CreateNote: NextPage<IHomePageProps> = props => {
+const CreateNote: NextPage = props => {
   const dispatch: TypedDispatch = useDispatch();
   const router: NextRouter = useRouter();
 

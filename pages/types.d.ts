@@ -1,2 +1,0 @@
-interface IHomePageProps {}
-interface IProfilePageProps {}

@@ -9,7 +9,7 @@ import NoteCard from "components/UI/NoteCard";
 import BrandButton from "components/UI/BrandButton";
 import AddCircleButton from "components/UI/AddCircleButton";
 
-const Home: NextPage<IHomePageProps> = props => {
+const Home: NextPage = props => {
   const { notes, user }: IStore = useSelector((store: IStore) => store);
 
   return (

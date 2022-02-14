@@ -14,7 +14,7 @@ import SecondaryButton from "components/UI/SecondaryButton";
 import ThemeSwitch from "components/UI/ThemeSwitch";
 import Link from "next/link";
 
-const Profile: NextPage<IProfilePageProps> = props => {
+const Profile: NextPage = props => {
   const router: NextRouter = useRouter();
   const dispatch: TypedDispatch = useDispatch();
 

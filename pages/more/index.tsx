@@ -12,7 +12,7 @@ import Link from "next/link";
 import AboutCard from "components/Custom/AboutCard";
 import PrivacyPolicyCard from "components/Custom/PrivacyPolicyCard";
 
-const More: NextPage<IProfilePageProps> = props => {
+const More: NextPage = props => {
   const router: NextRouter = useRouter();
   const dispatch: TypedDispatch = useDispatch();
 
