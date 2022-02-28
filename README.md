@@ -1,4 +1,4 @@
-<img src="./md/Frame.png" />
+![GitHub Dark](./md/Frame.png#gh-light-mode-only)
 
 ## My Feels Web Application
 
