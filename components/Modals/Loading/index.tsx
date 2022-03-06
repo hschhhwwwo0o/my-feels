@@ -9,10 +9,10 @@ const LoadingModal: FunctionComponent<{ isLoading: boolean }> = props => {
           !props.isLoading ? "opacity-0 -z-10" : "z-[10000]"
         }`}
       >
-        <div className="h-full flex flex-col items-center justify-between">
+        <div className="h-full animate-pulse flex flex-col items-center justify-between">
           <div />
           <div className={`-mt-7 ${!props.isLoading && "opacity-0"} transition-opacity duration-1000`}>
-            <div className="animate-pulse">
+            <div>
               <Logo />
             </div>
           </div>
