@@ -1,12 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Use BrandButton 1`] = `
-<div>
-  <button
-    className="w-full bg-[#151515] text-white py-[21px] rounded-md text-base px-5 font-semibold border-2 border-[#EAEAEA] dark:border-[#151515] transition-all duration-1000"
-    onClick={[Function]}
-  >
-    Oh click me, dear
-  </button>
-</div>
+exports[`Test exist button 1`] = `
+<button
+  class="w-full bg-[#151515] text-white py-[21px] rounded-md text-base px-5 font-semibold border-2 border-[#EAEAEA] dark:border-[#151515] transition-all duration-1000"
+>
+  click me
+</button>
 `;

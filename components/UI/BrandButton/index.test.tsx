@@ -1,9 +1,10 @@
-import React from "react";
-import renderer from "react-test-renderer";
-import BrandButton from "./index";
+import { render, screen } from "@testing-library/react";
+import "@testing-library/jest-dom";
+import Button from "./index";
 
-test("Use BrandButton", () => {
-  const component = renderer.create(<BrandButton>Oh click me, dear</BrandButton>);
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+test("Test exist button", () => {
+  render(<Button>click me</Button>);
+  const el = screen.getByText(/click me/i);
+  expect(el).toBeInTheDocument();
+  expect(el).toMatchSnapshot();
 });
