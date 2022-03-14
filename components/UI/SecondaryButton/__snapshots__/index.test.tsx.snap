@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test SecondaryButton component 1`] = `
+<button
+  class="w-full bg-[#FAFAFA] text-[#2F2F2F] py-[21px] rounded-md text-base px-5 font-semibold border-2 border-[#EAEAEA] dark:border-[#151515] transition-all duration-1000"
+>
+  Secondary text
+</button>
+`;
