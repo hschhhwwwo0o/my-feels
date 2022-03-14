@@ -4,7 +4,7 @@ import BackButton from "./index";
 
 test("Test exist back button", () => {
   render(<BackButton />);
-  const el = screen.getByRole("button");
+  const el: HTMLElement = screen.getByRole("button");
   expect(el).toBeInTheDocument();
   expect(el).toMatchSnapshot();
 });

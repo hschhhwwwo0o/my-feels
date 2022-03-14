@@ -4,7 +4,7 @@ import Button from "./index";
 
 test("Test exist button", () => {
   render(<Button>click me</Button>);
-  const el = screen.getByText(/click me/i);
+  const el: HTMLElement = screen.getByText(/click me/i);
   expect(el).toBeInTheDocument();
   expect(el).toMatchSnapshot();
 });

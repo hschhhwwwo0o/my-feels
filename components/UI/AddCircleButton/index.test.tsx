@@ -4,7 +4,7 @@ import AddCircleButton from "./index";
 
 test("Test exist add circle back button", () => {
   render(<AddCircleButton />);
-  const el = screen.getByRole("button");
+  const el: HTMLElement = screen.getByRole("button");
   expect(el).toBeInTheDocument();
   expect(el).toMatchSnapshot();
 });
