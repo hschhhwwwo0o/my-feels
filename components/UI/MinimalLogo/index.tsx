@@ -4,7 +4,7 @@ import Link from "next/link";
 const MinimalLogo: FunctionComponent = () => {
   return (
     <Link href="/">
-      <a>
+      <a role={"banner"}>
         <div className="cursor-pointer">
           <h1 className="text-lg dark:text-white transition-all duration-1000">
             <i>m</i>
