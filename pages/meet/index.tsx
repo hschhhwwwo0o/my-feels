@@ -13,8 +13,8 @@ import ThemeSwitch from "components/UI/ThemeSwitch";
 import Validate from "components/UI/Validate";
 
 const Meet: NextPage = props => {
-  const dispatch: TypedDispatch = useDispatch();
   const router: NextRouter = useRouter();
+  const dispatch: TypedDispatch = useDispatch();
 
   const [name, setName] = useState<string>("");
   const [lastName, setLastName] = useState<string>("");
@@ -24,7 +24,7 @@ const Meet: NextPage = props => {
     router.push("/");
   }
 
-  function validateName() {
+  function validateName(): boolean {
     if (name.length && lastName.length) {
       return true;
     }

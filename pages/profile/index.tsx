@@ -17,7 +17,6 @@ import Link from "next/link";
 const Profile: NextPage = props => {
   const router: NextRouter = useRouter();
   const dispatch: TypedDispatch = useDispatch();
-
   const { user }: IStore = useSelector((store: IStore) => store);
 
   const [name, setName] = useState<string>("");

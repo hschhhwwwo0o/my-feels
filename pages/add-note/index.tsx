@@ -14,9 +14,8 @@ import BrandButton from "components/UI/BrandButton";
 import Validate from "components/UI/Validate";
 
 const CreateNote: NextPage = props => {
-  const dispatch: TypedDispatch = useDispatch();
   const router: NextRouter = useRouter();
-
+  const dispatch: TypedDispatch = useDispatch();
   const { user }: IStore = useSelector((store: IStore) => store);
 
   const [isClicked, setIsClicked] = useState<boolean>(false);

@@ -15,7 +15,6 @@ import PrivacyPolicyCard from "components/Custom/PrivacyPolicyCard";
 const More: NextPage = props => {
   const router: NextRouter = useRouter();
   const dispatch: TypedDispatch = useDispatch();
-
   const { user }: IStore = useSelector((store: IStore) => store);
 
   async function onLogoutHandler(): Promise<void> {

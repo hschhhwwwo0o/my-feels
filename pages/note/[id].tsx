@@ -16,9 +16,8 @@ import TrashButton from "components/UI/TrashButton";
 import NoteDate from "components/Custom/NoteDate";
 
 const Home: NextPage = props => {
-  const dispatch: TypedDispatch = useDispatch();
   const router: NextRouter = useRouter();
-
+  const dispatch: TypedDispatch = useDispatch();
   const { notes }: IStore = useSelector((store: IStore) => store);
 
   const [title, setTitle] = useState<string>("");

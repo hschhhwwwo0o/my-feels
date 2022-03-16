@@ -14,8 +14,8 @@ import Error from "components/UI/Error";
 import Validate from "components/UI/Validate";
 
 const CreateAnAccount: NextPage = props => {
-  const dispatch: TypedDispatch = useDispatch();
   const router: NextRouter = useRouter();
+  const dispatch: TypedDispatch = useDispatch();
 
   const [apiError, setApiError] = useState<string>("");
   const [email, setEmail] = useState<string>("");
@@ -28,13 +28,13 @@ const CreateAnAccount: NextPage = props => {
     dispatch(createAnAccount(email, password, router, _errorCallback));
   }
 
-  function validateData() {
-    function _validatePassword() {
+  function validateData(): boolean {
+    function _validatePassword(): boolean | undefined {
       if (password.length > 4) {
         return true;
       }
     }
-    function _validateEmail() {
+    function _validateEmail(): RegExpMatchArray | null {
       return email.match(
         /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
       );
