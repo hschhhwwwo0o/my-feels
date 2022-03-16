@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test InputNoteTitleH2 component 1`] = `
+<span
+  data-testid="block"
+>
+  <input
+    class="text-lg lg:text-2xl bg-transparent font-semibold outline-none mt-6 text-[#242424] dark:text-[#ECECEC] placeholder-[#bebebe] dark:placeholder-[#545454]"
+    placeholder="Enter Title"
+    type="text"
+    value=""
+  />
+</span>
+`;
