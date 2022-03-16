@@ -21,6 +21,7 @@ const Emojies: FunctionComponent<IEmojies> = ({ value = [], setValue = () => {} 
       {emojiesArray.map(emoji => {
         return (
           <img
+            role={"button"}
             onClick={() => {
               onClickHandler(emoji.name);
             }}
