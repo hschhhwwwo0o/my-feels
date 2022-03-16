@@ -1,8 +1,8 @@
-import React, { FunctionComponent } from "react";
+import React, { Fragment, FunctionComponent } from "react";
 
 const ConnectFonts: FunctionComponent = props => {
   return (
-    <>
+    <Fragment>
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" />
       <link
@@ -15,7 +15,7 @@ const ConnectFonts: FunctionComponent = props => {
         href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600&display=swap"
         rel="stylesheet"
       ></link>
-    </>
+    </Fragment>
   );
 };
 
