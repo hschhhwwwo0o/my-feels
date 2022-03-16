@@ -14,6 +14,7 @@ const ThemeSwitch: FunctionComponent = () => {
 
   return (
     <div
+      role={"button"}
       className="w-[196px] h-[36px] bg-[#F5F5F5] dark:bg-[#1A1A1A] rounded-lg flex items-center justify-center px-1 overflow-hidden font-semibold transition-all duration-1000"
       onClick={onClickHandler}
     >

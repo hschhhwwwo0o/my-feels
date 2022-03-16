@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot Validate component with false 1`] = `
+<div
+  class="opacity-60 pointer-events-none transition-opacity duration-500"
+>
+  Ok
+</div>
+`;
