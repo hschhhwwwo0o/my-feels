@@ -28,7 +28,7 @@ const CreateNote: NextPage = props => {
     }
   }
 
-  function validateTitle() {
+  function validateTitle(): boolean {
     if (title.length) {
       return true;
     }
