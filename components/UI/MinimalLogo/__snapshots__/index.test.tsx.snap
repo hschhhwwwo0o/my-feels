@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test NoteCard component 1`] = `
+<a
+  href="/"
+  role="banner"
+>
+  <div
+    class="cursor-pointer"
+  >
+    <h1
+      class="text-lg dark:text-white transition-all duration-1000"
+    >
+      <i>
+        m
+      </i>
+      <span
+        class="font-bold"
+      >
+        f
+      </span>
+    </h1>
+  </div>
+</a>
+`;
