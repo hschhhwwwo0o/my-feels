@@ -5,8 +5,10 @@ interface IEmojies {
   setValue: Dispatch<SetStateAction<string[]>>;
 }
 
+type IEmoji = { name: string };
+
 const Emojies: FunctionComponent<IEmojies> = ({ value = [], setValue = () => {} }) => {
-  function onClickHandler(type: string) {
+  function onClickHandler(type: string): void {
     if (value.includes(type)) {
       setValue([...value.filter(v => v != type)]);
     } else {
@@ -14,7 +16,7 @@ const Emojies: FunctionComponent<IEmojies> = ({ value = [], setValue = () => {} 
     }
   }
 
-  const emojiesArray = [{ name: "cry" }, { name: "love" }, { name: "smile" }, { name: "sparkles" }];
+  const emojiesArray: IEmoji[] = [{ name: "cry" }, { name: "love" }, { name: "smile" }, { name: "sparkles" }];
 
   return (
     <div className="flex flex-row gap-3 items-center relative -top-[1px]">

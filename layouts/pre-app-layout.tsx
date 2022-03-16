@@ -8,9 +8,8 @@ import { reAuthenticate } from "redux/user/asyncActions";
 import LoadingModal from "components/Modals/Loading";
 
 const ThePreApplicationLayout: FunctionComponent<{ children: ReactNode }> = ({ children }) => {
-  const dispatch: TypedDispatch = useDispatch();
   const router: NextRouter = useRouter();
-
+  const dispatch: TypedDispatch = useDispatch();
   const { user }: IStore = useSelector((store: IStore) => store);
 
   const [isLoading, setIsLoading] = useState<boolean>(true);
