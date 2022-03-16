@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Error component 1`] = `
+<div
+  class="text-red-500 text-sm"
+  role="alert"
+>
+  Error label
+</div>
+`;

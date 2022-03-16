@@ -11,7 +11,9 @@ const Error: FunctionComponent<{ text: string; setError: Dispatch<SetStateAction
 
   return (
     <>
-      <div className="text-red-500 text-sm">{text}</div>
+      <div role="alert" className="text-red-500 text-sm">
+        {text}
+      </div>
     </>
   );
 };
