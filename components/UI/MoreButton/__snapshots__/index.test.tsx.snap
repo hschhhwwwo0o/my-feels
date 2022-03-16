@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test MoreButton component 1`] = `
+<span
+  data-testid="block"
+>
+  <div
+    role="button"
+  >
+    <button
+      class="w-[70px] h-[70px] border-2 rounded-md flex items-center justify-center border-[#EAEAEA] bg-[#FAFAFA] transition-all duration-1000"
+    >
+      <div
+        class="flex flex-row gap-1"
+      >
+        <div
+          class="w-[5px] h-[5px] bg-[#2F2F2F] rounded-full"
+        />
+        <div
+          class="w-[5px] h-[5px] bg-[#2F2F2F] rounded-full"
+        />
+        <div
+          class="w-[5px] h-[5px] bg-[#2F2F2F] rounded-full"
+        />
+      </div>
+    </button>
+  </div>
+</span>
+`;
