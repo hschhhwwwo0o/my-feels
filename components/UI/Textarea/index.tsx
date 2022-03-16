@@ -8,6 +8,7 @@ interface ITextarea {
 const Textarea: FunctionComponent<ITextarea> = ({ value = "", setValue = () => {} }) => {
   return (
     <textarea
+      role={"textbox"}
       value={value}
       onChange={e => {
         setValue(e.target.value);
