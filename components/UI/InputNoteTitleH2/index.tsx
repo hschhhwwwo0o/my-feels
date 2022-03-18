@@ -5,7 +5,10 @@ interface IInputNoteTitleH2 {
   setValue?: Dispatch<SetStateAction<string>>;
 }
 
-const InputNoteTitleH2: FunctionComponent<IInputNoteTitleH2> = ({ value = "", setValue = () => {} }) => {
+const InputNoteTitleH2: FunctionComponent<IInputNoteTitleH2> = ({
+  value = "",
+  setValue = () => {},
+}) => {
   return (
     <input
       value={value}

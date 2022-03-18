@@ -45,7 +45,9 @@ const CreateNote: NextPage = props => {
         </Motion>
         <div className="-mt-36 lg:mt-36">
           <Motion delay={1}>
-            <div className="font-semibold text-base text-[#3b3b3b] dark:text-[#565656]">Add title:</div>
+            <div className="font-semibold text-base text-[#3b3b3b] dark:text-[#565656]">
+              Add title:
+            </div>
           </Motion>
           <Motion delay={2}>
             <input

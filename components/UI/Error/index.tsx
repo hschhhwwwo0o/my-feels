@@ -1,10 +1,10 @@
 import React, { Dispatch, FunctionComponent, SetStateAction, useEffect } from "react";
 
-const Error: FunctionComponent<{ text: string; setError: Dispatch<SetStateAction<string>>; dependencies: any[] }> = ({
-  text,
-  dependencies,
-  setError,
-}) => {
+const Error: FunctionComponent<{
+  text: string;
+  setError: Dispatch<SetStateAction<string>>;
+  dependencies: any[];
+}> = ({ text, dependencies, setError }) => {
   useEffect(() => {
     setError("");
   }, dependencies);

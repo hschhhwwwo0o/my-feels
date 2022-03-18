@@ -61,7 +61,11 @@ const Profile: NextPage = props => {
             <Input value={email} setValue={setEmail} placeholder="Enter your email..." />
           </Motion>
           <Motion delay={5}>
-            <Input value={password} setValue={setPassword} placeholder="Enter your new password..." />
+            <Input
+              value={password}
+              setValue={setPassword}
+              placeholder="Enter your new password..."
+            />
           </Motion>
           <Motion delay={6}>
             <div className="mt-1 lg:pb-0">

@@ -11,7 +11,10 @@ const Motion: FunctionComponent<IMotion> = ({ children, delay = 0 }) => {
     <motion.div
       initial={{ opacity: MotionConfig.initialOpacity }}
       animate={{ opacity: MotionConfig.defaultOpacity }}
-      transition={{ duration: MotionConfig.defaultOpacity, delay: delay * MotionConfig.delayApplication }}
+      transition={{
+        duration: MotionConfig.defaultOpacity,
+        delay: delay * MotionConfig.delayApplication,
+      }}
     >
       {children}
     </motion.div>

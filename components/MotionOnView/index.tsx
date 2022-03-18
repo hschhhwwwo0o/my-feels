@@ -9,7 +9,8 @@ const MotionOnView: FunctionComponent = ({ children }) => {
       whileInView={{ opacity: MotionConfig.defaultOpacity }}
       transition={{
         duration: MotionConfig.transitionDuration,
-        delay: Math.random() > 0.5 ? MotionConfig.delayApplication : MotionConfig.delayApplication / 2,
+        delay:
+          Math.random() > 0.5 ? MotionConfig.delayApplication : MotionConfig.delayApplication / 2,
       }}
       viewport={{ once: false }}
     >

@@ -54,11 +54,12 @@ const CreateAnAccount: NextPage = props => {
       </Motion>
       <Motion delay={1}>
         <div className="text-base lg:text-lg text-[#2F2F2F] dark:text-[#e2e2e2] text-justify">
-          "My Feels" is a service for writing notes about your well-being with a minimal user interface.
+          "My Feels" is a service for writing notes about your well-being with a minimal user
+          interface.
           <br />
           <br />
-          Feel free to express your emotions to yourself, don't be ashamed of your feelings, don't be ashamed to be
-          yourself and your feeling will always be fine, we believe in it.
+          Feel free to express your emotions to yourself, don't be ashamed of your feelings, don't
+          be ashamed to be yourself and your feeling will always be fine, we believe in it.
           <br />
           <br />
           Already have an account?
@@ -80,7 +81,12 @@ const CreateAnAccount: NextPage = props => {
             <Input value={email} setValue={setEmail} placeholder="Enter email..." />
           </Motion>
           <Motion delay={4}>
-            <Input value={password} setValue={setPassword} placeholder="Enter password..." type="password" />
+            <Input
+              value={password}
+              setValue={setPassword}
+              placeholder="Enter password..."
+              type="password"
+            />
           </Motion>
           <Motion delay={5}>
             <Validate isValidate={validateData()}>

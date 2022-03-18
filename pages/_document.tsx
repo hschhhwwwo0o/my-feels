@@ -1,4 +1,11 @@
-import Document, { Html, Head, Main, NextScript, DocumentContext, DocumentInitialProps } from "next/document";
+import Document, {
+  Html,
+  Head,
+  Main,
+  NextScript,
+  DocumentContext,
+  DocumentInitialProps,
+} from "next/document";
 import ConnectFonts from "components/Head/ConnectFonts";
 import Meta from "components/Head/Meta";
 

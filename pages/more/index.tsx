@@ -46,12 +46,13 @@ const More: NextPage = props => {
                   Dear {user.firstName} {user.lastName}
                 </div>
                 <div className="text-[#444444] dark:text-[#B2B2B2] mt-[14px] text-sm lg:text-base text-justify">
-                  I'm glad if you liked my app. Take care of yourself and don't be afraid to express your feelings! Our
-                  world is beautiful and I wish you all the best!
+                  I'm glad if you liked my app. Take care of yourself and don't be afraid to express
+                  your feelings! Our world is beautiful and I wish you all the best!
                   <br />
                   <br />
-                  Unfortunately, because I use a free Heroku server, sometimes the app can take a long time and the
-                  server can freeze, but if you like my app, please give it a star on GitHub.
+                  Unfortunately, because I use a free Heroku server, sometimes the app can take a
+                  long time and the server can freeze, but if you like my app, please give it a star
+                  on GitHub.
                   <br />
                   <br />
                   If you want to remove the account, please leave feedback so my app can get better.

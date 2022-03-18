@@ -16,7 +16,12 @@ const Emojies: FunctionComponent<IEmojies> = ({ value = [], setValue = () => {} 
     }
   }
 
-  const emojiesArray: IEmoji[] = [{ name: "cry" }, { name: "love" }, { name: "smile" }, { name: "sparkles" }];
+  const emojiesArray: IEmoji[] = [
+    { name: "cry" },
+    { name: "love" },
+    { name: "smile" },
+    { name: "sparkles" },
+  ];
 
   return (
     <div className="flex flex-row gap-3 items-center relative -top-[1px]">

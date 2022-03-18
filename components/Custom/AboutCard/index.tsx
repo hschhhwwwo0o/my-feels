@@ -8,11 +8,12 @@ const AboutCard: FunctionComponent = () => {
     >
       <div className="font-semibold text-lg text-[#242424] dark:text-[#ECECEC]">About</div>
       <div className="text-[#444444] dark:text-[#B2B2B2] mt-[14px] text-sm lg:text-base text-justify">
-        "My Feels" is a service for writing notes about your well-being with a minimal user interface.
+        "My Feels" is a service for writing notes about your well-being with a minimal user
+        interface.
         <br />
         <br />
-        Feel free to express your emotions to yourself, don't be ashamed of your feelings, don't be ashamed to be
-        yourself and your feeling will always be fine, we believe in it.
+        Feel free to express your emotions to yourself, don't be ashamed of your feelings, don't be
+        ashamed to be yourself and your feeling will always be fine, we believe in it.
       </div>
     </div>
   );

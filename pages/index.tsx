@@ -36,7 +36,13 @@ const Home: NextPage = props => {
               <div className="grid grid-cols-2 gap-4 lg:gap-8 mt-3">
                 {notes.pinnedNotes.map((note: INote, index) => {
                   return (
-                    <NoteCard title={note.title} text={note.text} id={note._id} date={note.updatedAt} key={index} />
+                    <NoteCard
+                      title={note.title}
+                      text={note.text}
+                      id={note._id}
+                      date={note.updatedAt}
+                      key={index}
+                    />
                   );
                 })}
               </div>
@@ -52,7 +58,13 @@ const Home: NextPage = props => {
               <div className="grid grid-cols-2 gap-3 lg:gap-8 mt-3">
                 {notes.notes.map((note: INote, index) => {
                   return (
-                    <NoteCard title={note.title} text={note.text} id={note._id} date={note.updatedAt} key={index} />
+                    <NoteCard
+                      title={note.title}
+                      text={note.text}
+                      id={note._id}
+                      date={note.updatedAt}
+                      key={index}
+                    />
                   );
                 })}
               </div>
@@ -63,7 +75,9 @@ const Home: NextPage = props => {
         )}
         <Motion delay={4}>
           <div className="text-center dark:text-[#E8E8E8]">
-            {notes.notes.length === 0 && notes.pinnedNotes.length === 0 ? "You don't have notes yet" : ""}
+            {notes.notes.length === 0 && notes.pinnedNotes.length === 0
+              ? "You don't have notes yet"
+              : ""}
           </div>
         </Motion>
         <Motion delay={5}>

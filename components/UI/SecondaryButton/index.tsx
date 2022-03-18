@@ -5,7 +5,10 @@ interface ISecondaryButton {
   children?: ReactNode;
 }
 
-const SecondaryButton: FunctionComponent<ISecondaryButton> = ({ children, onClickHandler = () => {} }) => {
+const SecondaryButton: FunctionComponent<ISecondaryButton> = ({
+  children,
+  onClickHandler = () => {},
+}) => {
   return (
     <div>
       <button
