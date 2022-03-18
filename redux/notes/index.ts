@@ -47,13 +47,20 @@ function notesReducer(state = initialNotesStore, action: any): INotesStore {
       } else {
         return {
           ...state,
-          notes: [action.payload.note, ...state.notes.filter((note: INote) => note._id !== action.payload.note._id)],
+          notes: [
+            action.payload.note,
+            ...state.notes.filter((note: INote) => note._id !== action.payload.note._id),
+          ],
           pinnedNotes: state.pinnedNotes,
         };
       }
     case "SET_CURRENT_NOTE":
-      const note: INote | undefined = state.notes.find((note: INote) => note._id === action.payload._id);
-      const pinnedNote: INote | undefined = state.pinnedNotes.find((note: INote) => note._id === action.payload._id);
+      const note: INote | undefined = state.notes.find(
+        (note: INote) => note._id === action.payload._id
+      );
+      const pinnedNote: INote | undefined = state.pinnedNotes.find(
+        (note: INote) => note._id === action.payload._id
+      );
       const currentNote: any = note ? note : pinnedNote;
 
       return {

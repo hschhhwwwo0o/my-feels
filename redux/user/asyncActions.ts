@@ -54,7 +54,12 @@ export function logout(router: NextRouter): IPromisedThunk {
   };
 }
 
-export function login(email: string, password: string, router: NextRouter, _errorCallback: () => any): IPromisedThunk {
+export function login(
+  email: string,
+  password: string,
+  router: NextRouter,
+  _errorCallback: () => any
+): IPromisedThunk {
   return async function (dispatch: TypedDispatch) {
     try {
       const { user } = await feathersClient.authenticate({
@@ -84,7 +89,12 @@ export function changeTheme(theme: "dark" | "light"): IPromisedThunk {
   };
 }
 
-export function patchUser(email: string, password: string, firstName: string, lastName: string): IPromisedThunk {
+export function patchUser(
+  email: string,
+  password: string,
+  firstName: string,
+  lastName: string
+): IPromisedThunk {
   return async function (dispatch: TypedDispatch, getState: () => TypedState) {
     try {
       dispatch({

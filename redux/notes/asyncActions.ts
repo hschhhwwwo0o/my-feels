@@ -67,16 +67,23 @@ export function addNote(title: string, authorID: string, router: NextRouter): IP
   };
 }
 
-export function saveNote(title: string, text: string, isPinned: boolean, emojies: string[]): IPromisedThunk {
+export function saveNote(
+  title: string,
+  text: string,
+  isPinned: boolean,
+  emojies: string[]
+): IPromisedThunk {
   return async function (dispatch: TypedDispatch, getState: () => any) {
     try {
       await feathersClient.reAuthenticate();
-      const response = await feathersClient.service("notes").patch(getState().notes.currentNote._id, {
-        title,
-        text,
-        isPinned,
-        emojies,
-      });
+      const response = await feathersClient
+        .service("notes")
+        .patch(getState().notes.currentNote._id, {
+          title,
+          text,
+          isPinned,
+          emojies,
+        });
       dispatch({
         type: "SAVE_NOTE",
         payload: {
@@ -96,9 +103,11 @@ export function pinNote(isPinned: boolean): IPromisedThunk {
   return async function (dispatch: TypedDispatch, getState: () => any) {
     try {
       await feathersClient.reAuthenticate();
-      const response: any = await feathersClient.service("notes").patch(getState().notes.currentNote._id, {
-        isPinned,
-      });
+      const response: any = await feathersClient
+        .service("notes")
+        .patch(getState().notes.currentNote._id, {
+          isPinned,
+        });
       dispatch({
         type: "PIN_NOTE",
         payload: {
