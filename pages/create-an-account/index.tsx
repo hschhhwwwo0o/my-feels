@@ -39,7 +39,6 @@ const CreateAnAccount: NextPage = props => {
         /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
       );
     }
-
     if (_validatePassword() && _validateEmail()) {
       return true;
     }
@@ -62,7 +61,7 @@ const CreateAnAccount: NextPage = props => {
           yourself and your feeling will always be fine, we believe in it.
           <br />
           <br />
-          Already have an account?{" "}
+          Already have an account?
           <Link href="/login">
             <a>
               <span className="underline">Sign in</span>

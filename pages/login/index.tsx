@@ -43,7 +43,7 @@ const Login: NextPage = props => {
           yourself and your feeling will always be fine, we believe in it.
           <br />
           <br />
-          Don't have an account yet?{" "}
+          Don't have an account yet?
           <Link href="/create-an-account">
             <a>
               <span className="underline">Create an account</span>
