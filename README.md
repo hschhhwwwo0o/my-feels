@@ -4,8 +4,8 @@
 
 "My Feels" is a service for writing notes about your well-being with a minimal user interface.
 
-Feel free to express your emotions to yourself, don't be ashamed of your feelings, don't be ashamed to be yourself and
-your feeling will always be fine, we believe in it.
+Feel free to express your emotions to yourself, don't be ashamed of your feelings, don't be ashamed
+to be yourself and your feeling will always be fine, we believe in it.
 
 ## Tech Stack
 
