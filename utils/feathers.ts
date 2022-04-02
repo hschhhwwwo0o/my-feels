@@ -8,7 +8,7 @@ interface IFeathersClient {
   users: Service<any>;
 }
 
-const socket: SocketIOClient.Socket = io("https://my-feels-api.herokuapp.com/");
+const socket: SocketIOClient.Socket = io(process.env.NEXT_PUBLIC_FEATHERS_HOST || "");
 const feathersClient: Application<IFeathersClient> = feathers();
 
 feathersClient.configure(auth());
