@@ -29,7 +29,7 @@ const Home: NextPage = props => {
             </a>
           </Link>
         </Motion>
-        {notes.pinnedNotes.length ? (
+        {!!notes.pinnedNotes.length && (
           <Motion delay={2}>
             <div className="pb-6 lg:pb-12">
               <div className="text-[#242424] dark:text-[#E8E8E8] text-sm font-medium">Pinned</div>
@@ -48,10 +48,8 @@ const Home: NextPage = props => {
               </div>
             </div>
           </Motion>
-        ) : (
-          ""
         )}
-        {notes.notes.length ? (
+        {!!notes.notes.length && (
           <Motion delay={3}>
             <div className="mt-0">
               <div className="text-[#242424] dark:text-[#E8E8E8] text-sm font-medium">All</div>
@@ -70,14 +68,12 @@ const Home: NextPage = props => {
               </div>
             </div>
           </Motion>
-        ) : (
-          ""
         )}
         <Motion delay={4}>
           <div className="text-center dark:text-[#E8E8E8]">
-            {notes.notes.length === 0 && notes.pinnedNotes.length === 0
-              ? "You don't have notes yet"
-              : ""}
+            {notes.notes.length === 0 &&
+              notes.pinnedNotes.length === 0 &&
+              "You don't have notes yet"}
           </div>
         </Motion>
         <Motion delay={5}>

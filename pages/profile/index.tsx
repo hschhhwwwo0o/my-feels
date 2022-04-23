@@ -18,7 +18,6 @@ const Profile: NextPage = props => {
   const router: NextRouter = useRouter();
   const dispatch: TypedDispatch = useDispatch();
   const { user }: IStore = useSelector((store: IStore) => store);
-
   const [name, setName] = useState<string>("");
   const [lastName, setLastName] = useState<string>("");
   const [email, setEmail] = useState<string>("");

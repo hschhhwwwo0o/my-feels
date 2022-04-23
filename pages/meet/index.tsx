@@ -15,7 +15,6 @@ import Validate from "components/UI/Validate";
 const Meet: NextPage = props => {
   const router: NextRouter = useRouter();
   const dispatch: TypedDispatch = useDispatch();
-
   const [name, setName] = useState<string>("");
   const [lastName, setLastName] = useState<string>("");
 

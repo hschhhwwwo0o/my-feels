@@ -19,7 +19,6 @@ const Home: NextPage = props => {
   const router: NextRouter = useRouter();
   const dispatch: TypedDispatch = useDispatch();
   const { notes }: IStore = useSelector((store: IStore) => store);
-
   const [title, setTitle] = useState<string>("");
   const [text, setText] = useState<string>("");
   const [isPinned, setIsPinned] = useState<boolean>(false);

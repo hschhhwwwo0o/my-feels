@@ -15,7 +15,6 @@ import Error from "components/UI/Error";
 const Login: NextPage = props => {
   const router: NextRouter = useRouter();
   const dispatch: TypedDispatch = useDispatch();
-
   const [apiError, setApiError] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");

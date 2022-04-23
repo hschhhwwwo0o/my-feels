@@ -1,10 +1,9 @@
 import type { NextPage } from "next";
-import { TypedDispatch } from "redux";
-import { useDispatch, useSelector } from "react-redux";
-import { useState } from "react";
-import { addNote } from "redux/notes/asyncActions";
-import { IStore } from "redux";
 import { NextRouter, useRouter } from "next/router";
+import { useState } from "react";
+import { TypedDispatch, IStore } from "redux";
+import { useDispatch, useSelector } from "react-redux";
+import { addNote } from "redux/notes/asyncActions";
 import TheLayout from "layouts";
 import Link from "next/link";
 import Motion from "components/Motion";
@@ -17,7 +16,6 @@ const CreateNote: NextPage = props => {
   const router: NextRouter = useRouter();
   const dispatch: TypedDispatch = useDispatch();
   const { user }: IStore = useSelector((store: IStore) => store);
-
   const [isClicked, setIsClicked] = useState<boolean>(false);
   const [title, setTitle] = useState<string>("");
 

@@ -4,11 +4,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { logout } from "redux/user/asyncActions";
 import { NextRouter, useRouter } from "next/router";
 import TheLayout from "layouts";
+import Link from "next/link";
 import Motion from "components/Motion";
 import MinimalLogo from "components/UI/MinimalLogo";
 import SecondaryButton from "components/UI/SecondaryButton";
 import BrandButton from "components/UI/BrandButton";
-import Link from "next/link";
 import AboutCard from "components/Custom/AboutCard";
 import PrivacyPolicyCard from "components/Custom/PrivacyPolicyCard";
 

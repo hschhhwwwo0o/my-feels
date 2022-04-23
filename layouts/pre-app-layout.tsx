@@ -11,7 +11,6 @@ const ThePreApplicationLayout: FunctionComponent<{ children: ReactNode }> = ({ c
   const router: NextRouter = useRouter();
   const dispatch: TypedDispatch = useDispatch();
   const { user }: IStore = useSelector((store: IStore) => store);
-
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
